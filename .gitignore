@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+##############
+#App Specific
+##############
+config.py
+.DS_Store
+.ipynb_checkpoints
+config.js
+~$e Plastic Problem Proposal.docx
