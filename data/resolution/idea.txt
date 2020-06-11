@@ -1,0 +1,6 @@
+combined mlw
+lat lng , date , helpers , total items
+a,b,ab,aa,am
+detaield summary
+e,e(need to split),G,K,BI
+
