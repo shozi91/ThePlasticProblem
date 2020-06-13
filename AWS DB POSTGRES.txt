@@ -1,8 +1,0 @@
-username : tpp
-Password: postgres
-
-Endpoint & port
-Endpoint
-plastic.cwsizsgvjvsz.us-east-2.rds.amazonaws.com
-Port
-5432

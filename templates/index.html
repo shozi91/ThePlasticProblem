@@ -5,25 +5,16 @@
         <meta charset="UTF-8">
         <title>Plastic Problems
         </title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css" >
     </head>
 
     <body>
-        <script>
-            var table1 = '{{ table1|safe }}';
-            var table2 = '{{ table2|safe }}';
-            var table3 = '{{ table3|safe }}';
-            var table4 = '{{ table4|safe }}';
-            var table5 = '{{ table5|safe }}';
-            var table6 = '{{ table6|safe }}';
-            var table7 = '{{ table7|safe }}';
-            var table8 = '{{ table8|safe }}';
-        </script>
-        <script src="js/home.js"></script>
+         
 
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
             <a href="#" class="navbar-brand">
-                <img src="img/logo.png" height="28" alt="The Plastic Problem">
+                <img src="static/img/logo.png" height="28" alt="The Plastic Problem">
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -52,17 +43,16 @@
                     This presentation will attempt to answer the below questions using the datasets outlined:
                 </p>
                 <p>Where does it come from - https://ourworldindata.org/where-does-plastic-accumulate</p>
-                <img src="img/source.png">
+                <img src="static/img/source.png">
                 <p>What are the impacts - https://ourworldindata.org/ecological-impacts-of-marine-plastic-debris</p>
-                <iframe src="https://ourworldindata.org/ecological-impacts-of-marine-plastic-debris" ></iframe>
+                <!-- <iframe src="https://ourworldindata.org/ecological-impacts-of-marine-plastic-debris" ></iframe> -->
                 <p>What’s being done - https://www.coastalcleanupdata.org/reports</p>
-                <iframe src="https://www.coastalcleanupdata.org/reports" ></iframe>
+                <!-- <iframe src="https://www.coastalcleanupdata.org/reports" ></iframe> -->
 
             </div>
 
-        <script src="http://d3js.org/d3.v3.min.js"></script>
-        <script src="d3.min.js?v=3.2.8"></script>
-        <script src="js/home.js"></script>
+        
+        
         
         
 
@@ -72,7 +62,10 @@
         </div>
 
         <script type="text/javascript"charset="utf-8"></script>
-        <script src="paste custom js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        
+        <script src="{{ url_for('static', filename='js/home.js')}}"></script>
+        
 
         
     </body>
