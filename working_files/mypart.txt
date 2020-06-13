@@ -1,0 +1,12 @@
+impact:
+map ocean dirt
+
+table bottstrap
+add filter to the tables in html ( way to sort)
+
+sadness link
+
+galary
+google custom api 
+try to add some videos
+https://mdbootstrap.com/plugins/jquery/gallery/
