@@ -86,7 +86,7 @@ def t6():
     return table6
 
 @app.route("/summary_earth")
-def t7():
+def t12():
     connection = engine.connect()
     table7 = pd.read_sql(sql=f"Select * FROM {x[6]}", con=connection).to_json(orient='records')
     connection.close()
