@@ -5,19 +5,16 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, MetaData
 import pandas as pd
 from flask import Flask, jsonify
-
-
-
 #################################################
 # Database Setup
 #################################################
 engine = create_engine(
     f'postgresql://postgres:postgres@database-2.cwsizsgvjvsz.us-east-2.rds.amazonaws.com:5432/plastic')
 # # reflect an existing database into a new model
-# Base = automap_base()
+#Base = automap_base()
 
 # # reflect the tables
-# Base.prepare(engine, reflect=True)
+#Base.prepare(engine, reflect=True)
 
 
 
@@ -125,11 +122,16 @@ def t6():
     return table6
 
 @app.route("/summary_earth")
-def marsupilamie():
+def t7():
     connection = engine.connect()
     table7 = pd.read_sql(sql=f"Select * FROM {x[6]}", con=connection).to_json(orient='records')
     connection.close()
-    return table7
+    return  table7 
+
+@app.route("/resolution")
+def resolution():
+    
+    return render_template("cleanUpSummary.html")
 
 @app.route("/surface_plastic_mass_by_ocean")
 def t8():
