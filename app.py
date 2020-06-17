@@ -60,6 +60,10 @@ def t2():
     connection.close()
     return table2
 
+@app.route("/source")
+def source():
+    return render_template("data.html")
+
 @app.route("/impactstudies")
 def t3():
     connection = engine.connect()
