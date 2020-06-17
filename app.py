@@ -42,6 +42,42 @@ def index():
     print('test')
     return render_template("index.html" )
 
+
+@app.route("/gal")
+def gal():
+    print('test')
+    connection = engine.connect()
+    table3 = pd.read_sql(sql=f"Select * FROM {x[2]}", con=connection)
+    tablehtml = table3.to_html()
+    tablejson = table3.to_json(orient='records')
+    connection.close()
+    return render_template("gal.html",tablehtml=tablehtml, tablejson=tablejson )
+
+@app.route("/gal2")
+def gal2():
+    print('test')
+    return render_template("gal2.html")
+
+@app.route("/resolution")
+def resolution():
+    
+    return render_template("cleanUpSummary.html")
+
+@app.route("/source")
+def source():
+    
+    return render_template("source.html")
+
+@app.route("/river")
+def source():
+    
+    return render_template("river.html")
+
+@app.route("/data")
+def source():
+    
+    return render_template("data.html")
+
 @app.route("/cleanup")
 def t1():
     connection = engine.connect()
@@ -86,7 +122,7 @@ def t6():
     return table6
 
 @app.route("/summary_earth")
-def t12():
+def t7():
     connection = engine.connect()
     table7 = pd.read_sql(sql=f"Select * FROM {x[6]}", con=connection).to_json(orient='records')
     connection.close()
