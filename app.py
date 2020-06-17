@@ -69,12 +69,12 @@ def source():
     return render_template("source.html")
 
 @app.route("/river")
-def source():
+def river():
     
     return render_template("river.html")
 
 @app.route("/data")
-def source():
+def data():
     
     return render_template("data.html")
 
@@ -128,10 +128,6 @@ def t7():
     connection.close()
     return  table7 
 
-@app.route("/resolution")
-def resolution():
-    
-    return render_template("cleanUpSummary.html")
 
 @app.route("/surface_plastic_mass_by_ocean")
 def t8():
