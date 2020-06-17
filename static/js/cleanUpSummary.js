@@ -54,7 +54,7 @@ colorScale = []
     console.log(tableData)
  });
 
- d3.json("/surface_plastic_mass_by_ocean").then(function(data){
+ d3.json("/cleanup").then(function(data){
     console.log(data)
     
  });
