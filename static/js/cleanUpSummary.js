@@ -51,10 +51,4 @@ colorScale = []
     
     const chart = new D3Funnel('#funnel');
     chart.draw(tableData, options);
-    console.log(tableData)
- });
-
- d3.json("/cleanup").then(function(data){
-    console.log(data)
-    
  });

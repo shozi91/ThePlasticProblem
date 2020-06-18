@@ -26,7 +26,7 @@
                     <a href="#" class="nav-item nav-link">Profile</a>
                     <a href="#" class="nav-item nav-link">Source</a>
                     <a href="{{ url_for('gal')}}"  class="nav-item nav-link">Effect</a>
-                    <a href="#" class="nav-item nav-link">Resolution</a>
+                    <a href="{{url_for('resolution')}}" class="nav-item nav-link">Resolution</a>
                     <a href="#" class="nav-item nav-link disabled" tabindex="-1">Data</a>
                 </div>
                 <div class="navbar-nav ml-auto">
@@ -63,7 +63,6 @@
 
         <script type="text/javascript"charset="utf-8"></script>
         <script src="https://d3js.org/d3.v5.min.js"></script>
-        
         <script src="{{ url_for('static', filename='js/home.js')}}"></script>
         
 
