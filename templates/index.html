@@ -40,9 +40,15 @@
                 <div class="navbar-nav">
                     <a href="#" class="nav-item nav-link active">Home</a>
                     <a href="#" class="nav-item nav-link">Source</a>
+                    <a href="{{ url_for('gal')}}"  class="nav-item nav-link">Effect</a>
+                    <a href="{{url_for('resolution')}}" class="nav-item nav-link">Resolution</a>
+                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Data</a>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a href="{{ url_for('gal2')}}" class="nav-item nav-link">Pictures</a>
                     <a href="#" class="nav-item nav-link">Effect</a>
                     <a href="#" class="nav-item nav-link">Resolution</a>
-                    <a href="#" class="nav-item nav-link mr-auto">Pictures</a>   </li>
+                    <a href="#" class="nav-item nav-link mr-auto">Pictures</a>
                     
                 </div>
                 <div class="navbar-nav mr-auto">
@@ -107,7 +113,11 @@
         </div>
 
         <script type="text/javascript"charset="utf-8"></script>
-        <script src="paste custom js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="{{ url_for('static', filename='js/home.js')}}"></script>
+        
+
 
         
     </body>
+</html>
