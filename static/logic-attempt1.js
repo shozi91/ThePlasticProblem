@@ -1,47 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Basic Map</title>
 
-  <!-- Leaflet CSS & JS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-  crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-  crossorigin=""></script>
-
-  <!-- CSS -->
-    <style>
-    .countries {
-        fill: none;
-        stroke: #fff;
-        stroke-linejoin: round;
-    }
-    .legendThreshold {
-        font-size: 12px;
-        font-family: sans-serif;
-    }
-    .caption {
-        fill: #000;
-        text-anchor: start;
-        font-weight: bold;
-    }
-    </style>
-</head>
-
-<svg width="960" height="600"></svg>
-
-  <!-- API key -->
-    <script type="text/javascript" src="config.js"></script>
-
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
-
-<script>
 
 // The svg
 var svg = d3.select("svg"),
@@ -84,7 +41,7 @@ svg.select(".legendThreshold")
 // Load external data and boot
 d3.queue()
     .defer(d3.json, "http://enjalot.github.io/wwsd/data/world/world-110m.geojson")
-    .defer(d3.csv, "plastic_waste_generation_total.csv", function(d) { data.set(d.Entity, +d.Plastic_Waste_Generation_tonnes); })
+    .defer(d3.json, "../data/plastic_waste_generation_total", function(d){data.set(d.Entity, +d.Plastic_Waste_Generation_tonnes); })
     .await(ready);
 
 function ready(error, topo) {
@@ -98,10 +55,9 @@ function ready(error, topo) {
         .enter().append("path")
             .attr("fill", function (d){
                 // Pull data for this country
-                d.Plastic_Waste_Generation_tonnes = data.get(d.id) || 0;
+                d.Entity = data.get(d.name) || 0;
                 // Set the color
                 return colorScale(d.Plastic_Waste_Generation_tonnes);
             })
             .attr("d", path);
 }
-</script>
