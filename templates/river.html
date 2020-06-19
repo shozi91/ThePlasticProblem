@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Plastic Problems - Rivers
+        </title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css" >
+
+    </head>
+
+    <body>
+         
+
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <a href="#" class="navbar-brand">
+                <img src="static/img/logo.png" height="28" alt="The Plastic Problem">
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="#" class="nav-item nav-link active">Home</a>
+                    <a href="#" class="nav-item nav-link">Profile</a>
+                    <a href="#" class="nav-item nav-link">Source</a>
+                    <a href="{{ url_for('gal')}}"  class="nav-item nav-link">Effect</a>
+                    <a href="#" class="nav-item nav-link">Resolution</a>
+                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Data</a>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a href="{{ url_for('gal2')}}" class="nav-item nav-link">Pictures</a>
+                </div>
+            </div>
+        </nav>
+
+        <style>
+            html 
+                {
+                overflow: auto;
+                }
+                
+                html, body, div, iframe 
+                {
+                margin: 0px; 
+                padding: 0px; 
+                height: 100%; 
+                border: none;
+                }
+            
+            iframe 
+                {
+                display: block; 
+                width: 100%; 
+                border: none; 
+                overflow-y: auto; 
+                overflow-x: hidden;
+                }
+        </style>
+
+        <div class="jumbotron jumbotron-fluid m-5 p-5">
+            <h1> The Rivers that polute our waters! </h1>
+            <hr>
+            <iframe src="https://theoceancleanup.com/sources/" frameborder="0" 
+            marginheight="0" 
+            marginwidth="0" 
+            width="100%" 
+            height="100%" 
+            scrolling="auto">Your browser doesn't support iFrames.</iframe>
+        </div>
+
+        <nav class="navbar navbar-light bg-light fixed-bottom" style="opacity: 0.5;">
+			<div class="btn-group container text">
+
+
+				<button class="btn " ><a href="{{ url_for('index')}}" style="color: darkslategrey;">Home</a></button>
+				
+				<button class="btn " ><a href="{{ url_for('gal')}}" style="color: darkslategrey;">Effects</a></button>
+            
+            </div> 	
+		</nav>

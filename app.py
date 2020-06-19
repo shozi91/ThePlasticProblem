@@ -6,19 +6,17 @@ from sqlalchemy import create_engine, func, MetaData
 import pandas as pd
 from flask import Flask, jsonify
 import requests
-
-
-
+from datetime import datetime
 #################################################
 # Database Setup
 #################################################
 engine = create_engine(
     f'postgresql://postgres:postgres@database-2.cwsizsgvjvsz.us-east-2.rds.amazonaws.com:5432/plastic')
 # # reflect an existing database into a new model
-# Base = automap_base()
+#Base = automap_base()
 
 # # reflect the tables
-# Base.prepare(engine, reflect=True)
+#Base.prepare(engine, reflect=True)
 
 
 
@@ -31,8 +29,6 @@ from sqlalchemy.engine import reflection
 
 insp = reflection.Inspector.from_engine(engine)
 x = insp.get_table_names()
-
-
 # Save reference to the table
 
 
@@ -46,12 +42,51 @@ def index():
     print('test')
     return render_template("index.html" )
 
+
+@app.route("/gal")
+def gal():
+    print('test')
+    connection = engine.connect()
+    table3 = pd.read_sql(sql=f"Select * FROM {x[2]}", con=connection)
+    tablehtml = table3.to_html()
+    tablejson = table3.to_json(orient='records')
+    connection.close()
+    return render_template("gal.html",tablehtml=tablehtml, tablejson=tablejson )
+
+@app.route("/gal2")
+def gal2():
+    print('test')
+    return render_template("gal2.html")
+
+@app.route("/resolution")
+def resolution():
+    
+    return render_template("cleanUpSummary.html")
+
+@app.route("/source")
+def source():
+    
+    return render_template("source.html")
+
+@app.route("/river")
+def river():
+    
+    return render_template("river.html")
+
+@app.route("/data")
+def data():
+    
+    return render_template("data.html")
+
 @app.route("/cleanup")
 def t1():
     connection = engine.connect()
-    table1 = pd.read_sql(sql=f"Select * FROM {x[0]}", con=connection).to_json(orient='records')
+    data = pd.read_sql_query(sql=f"Select * FROM {x[0]}", con=connection)
+    datetime_str = '12/31/18 13:55:26'
+    datetime_object = datetime.strptime(datetime_str, "%m/%d/%y %H:%M:%S")
+    data["DateOriginal"] = pd.to_datetime(data["DateOriginal"])
+    table1 = data.loc[data['DateOriginal']> datetime_object].to_json(orient='records')
     connection.close()
-    
     return table1
 
 @app.route("/global_plastic_production")
@@ -116,7 +151,8 @@ def t7():
     connection = engine.connect()
     table7 = pd.read_sql(sql=f"Select * FROM {x[6]}", con=connection).to_json(orient='records')
     connection.close()
-    return table7
+    return  table7 
+
 
 @app.route("/surface_plastic_mass_by_ocean")
 def t8():
