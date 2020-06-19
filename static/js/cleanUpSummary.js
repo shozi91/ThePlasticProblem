@@ -51,10 +51,4 @@ colorScale = []
     
     const chart = new D3Funnel('#funnel');
     chart.draw(tableData, options);
-    console.log(tableData)
- });
-
- d3.json("/surface_plastic_mass_by_ocean").then(function(data){
-    console.log(data)
-    
  });

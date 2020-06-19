@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, MetaData
 import pandas as pd
 from flask import Flask, jsonify
+from datetime import datetime
 #################################################
 # Database Setup
 #################################################
@@ -27,8 +28,6 @@ from sqlalchemy.engine import reflection
 
 insp = reflection.Inspector.from_engine(engine)
 x = insp.get_table_names()
-
-
 # Save reference to the table
 
 
@@ -81,9 +80,12 @@ def data():
 @app.route("/cleanup")
 def t1():
     connection = engine.connect()
-    table1 = pd.read_sql(sql=f"Select * FROM {x[0]}", con=connection).to_json(orient='records')
+    data = pd.read_sql_query(sql=f"Select * FROM {x[0]}", con=connection)
+    datetime_str = '12/31/18 13:55:26'
+    datetime_object = datetime.strptime(datetime_str, "%m/%d/%y %H:%M:%S")
+    data["DateOriginal"] = pd.to_datetime(data["DateOriginal"])
+    table1 = data.loc[data['DateOriginal']> datetime_object].to_json(orient='records')
     connection.close()
-    
     return table1
 
 @app.route("/global_plastic_production")
