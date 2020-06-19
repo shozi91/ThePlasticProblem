@@ -60,13 +60,11 @@ def gal2():
 
 @app.route("/resolution")
 def resolution():
-    
     return render_template("cleanUpSummary.html")
 
 @app.route("/source")
 def source():
-    
-    return render_template("source.html")
+    return render_template("source_final.html")
 
 @app.route("/river")
 def river():
@@ -95,10 +93,6 @@ def t2():
     table2 = pd.read_sql(sql=f"Select * FROM {x[1]}", con=connection).to_json(orient='records')    
     connection.close()
     return table2
-
-@app.route("/source")
-def source():
-    return render_template("source_final.html")
 
 @app.route("/impactstudies")
 def t3():

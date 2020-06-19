@@ -7,7 +7,7 @@ function createMap(markerData) {
       maxZoom: 10,
       tileSize: 256,
       id: "light-v10",
-      accessToken: mapboxAPI
+      accessToken: API_KEY
     });
   
     // Create a baseMaps object to hold the lightmap layer
