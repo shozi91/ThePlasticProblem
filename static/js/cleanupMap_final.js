@@ -24,13 +24,12 @@ function createMap(data){
 
     // Loop through data
     for (var i = 0; i < data.length; i++) {
-
       // Set the data location property to a variable
 
 
         // Add a new marker to the cluster group and bind a pop-up
         markers.addLayer(L.marker([data[i].lat, data[i].lon])
-          .bindPopup(data[i].Totalltems_EventRecord));
+        .bindPopup("<h3>Volunteers: " + data[i].TotalVolunteers + "</h3><hr><h4> Total Items Collected: "+ data[i].Totalltems_EventRecord +  "</h4>"))
     }
 
     // Add our marker cluster layer to the map
