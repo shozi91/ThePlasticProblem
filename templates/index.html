@@ -97,7 +97,7 @@
             <h2 style="text-align:center;">Source</h2><hr class = "hr-subtitle">
 
 
-            <a href="#"><img class = "img-shadow" src="static/img/source.png" width="45%" height="auto" ALIGN='left'
+            <a href="{{ url_for('source')}}"><img class = "img-shadow" src="static/img/source.png" width="45%" height="auto" ALIGN='left'
                     style="margin-right:20px;"></a><p class="lead">The plastics problem has been
             growing exponentially for decades. In 1967, less than 25 million tons were produced each year. Yet by 1980,
             production had doubled. Ten years later, it doubled again to 100 million tons, surpassing the amount of
@@ -116,7 +116,7 @@
     <div class="row" style="font-size:18px">
         <div class="col-md-12 col-12">
             <h2 style="text-align:center;">Impacts</h2><hr class = "hr-subtitle">
-            <a href='#'><img class = "img-shadow" src="static/img/Great-Pacific-Garbage-Patch.png" width="45%" height="auto" ALIGN='right'
+            <a href='{{ url_for('gal')}}'><img class = "img-shadow" src="static/img/Great-Pacific-Garbage-Patch.png" width="45%" height="auto" ALIGN='right'
                     style="margin-left:20px;"></a><p class="lead"> Plastic enters the oceans from
             coastlines, rivers, tides, and marine sources. But once it is there, where does it go?
 
@@ -144,7 +144,7 @@
                 issue that exists. We have provided a graph that shows
                 how much of each type plastic waste and other waste is being collected and also a world map that shows
                 where it is being collected.
-                <P class='lead'><br> Please click <a href='#'>here</a> to learn more</div>
+                <P class='lead'><br> Please click <a href='{{url_for('resolution')}}'>here</a> to learn more</div>
             <style>
                 * {
                     box-sizing: border-box;
