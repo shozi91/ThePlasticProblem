@@ -1,0 +1,1 @@
+web: gunicorn ThePlasticProblem.app:app --log-level info --log-file=-
