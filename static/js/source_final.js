@@ -13,6 +13,8 @@ d3.json("/plastic_waste_by_sector").then(function(data){
         values.push(data.Primary_Plastic_Waste_Generation_tonnes)
     });
 
+    
+
     var trace1 = {
         labels: labels,
         values: values,
@@ -22,7 +24,6 @@ d3.json("/plastic_waste_by_sector").then(function(data){
       var data = [trace1];
       
       var layout = {
-        title: "Plastic Waste by Sector (tonnes and %)",
       };
       
       Plotly.newPlot("plot", data, layout);
@@ -72,9 +73,7 @@ d3.json("/plastic_waste_by_sector").then(function(data){
         };
       var data = [trace1, trace2, trace3];
       
-      var layout = {
-        title: "The Fate of Plastics Produced since 1950 (place holder, put as header instead so we can play with it)",
-        barmode: 'stack'};
+      var layout = {barmode: 'stack'};
       
       Plotly.newPlot('stackbar', data, layout)
     

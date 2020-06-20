@@ -22,7 +22,7 @@ function createMap(markerData) {
   
     // Create the map object with options
     var map = L.map("map", {
-        center: [40.73, -74.0059],
+        center: [29.081209, 1.123285],
         zoom: 2,
         layers: [lightmap, markerData]
     });
