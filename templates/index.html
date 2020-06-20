@@ -9,10 +9,10 @@
         <!-- CSS only -->
 
 
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -36,55 +36,34 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <a href="#" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">Source</a>
-                    <a href="{{ url_for('gal')}}"  class="nav-item nav-link">Effect</a>
-                    <a href="{{url_for('resolution')}}" class="nav-item nav-link">Resolution</a>
-                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Data</a>
-                </div>
-                <div class="navbar-nav ml-auto">
-                    <a href="{{ url_for('gal2')}}" class="nav-item nav-link">Pictures</a>
-                    <a href="#" class="nav-item nav-link">Effect</a>
-                    <a href="#" class="nav-item nav-link">Resolution</a>
-                    <a href="#" class="nav-item nav-link mr-auto">Pictures</a>
-                    
-                </div>
-                <div class="navbar-nav mr-auto">
-                    
-                        <li class="nav-item dropdown">
-                   
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" 
-                            data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle navigation">Data</a>
-                            
-                            
-                                <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
-
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div></li>           
-                                <li class="nav-item"><ul class="navbar-nav mr-auto">
-                                
-                                </ul>
-
-                            </div>
-                                 
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="{{ url_for('source')}}" class="nav-link">Source</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gal')}}"  class="nav-link">Effect</a></li>
+                    <li class="nav-item"><a href="{{url_for('resolution')}}" class="nav-link">Resolution</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gal2')}}" class="nav-link">Pictures</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Data
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Source Data</a>
+                            <a class="dropdown-item" href="#">Effect Data</a>
+                            <a class="dropdown-item" href="#">Resolution Data</a>
+                            <a class="dropdown-item" href="#">Pictures Data</a>
+                          </div>
+                    </li>
+                </ul>
             </div>
-            
         </nav>
 
-        <div class="jumbotron-fluid";>
-            <div style= "background-image: url(../img/trash_banner.jpg);background-size: 100%; background-repeat: no-repeat; margin-right:0px; margin-left: 0px;">
-                <h1 style="text-align:center; color:white; font-weight: bold;  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; background: rgba(204, 204, 179,0.3)">The Plastic Problem </h1>
-                <br><br><br><br><br><br>
+        <div class="jumbotron";>
+            <!-- <div style= "background-image: url(../img/trash_banner.jpg);background-size: 100%; background-repeat: no-repeat; margin-right:0px; margin-left: 0px;"> -->
+                <h1 class = "display-3">The Plastic Problem </h1>
+                <!-- <br><br><br><br><br><br> -->
                 <p class="lead" style="color:white;text-align:center; text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; background: rgba(204, 204, 179,0.3)"><b>Humanity has a problem. Pollution, we’re addicted to it. One of the largest contributors to this addiction is our love of plastic. Why? Because we are lazy and love convenience. It’s in everything, from packaging to construction to medical equipment. But when we’re done with it, where does this manmade material go?
-
                     This presentation will attempt to answer the below questions using the datasets outlined:
-                    <br>
+                    <!-- <br> -->
                 </p>
             </div>
 
@@ -99,22 +78,8 @@
 
             </div>
 
-            
-
-        <script src="http://d3js.org/d3.v3.min.js"></script>
-        <script src="d3.min.js?v=3.2.8"></script>
-        <script src="js/home.js"></script>
-        
-        
-
-
-
-        
-        </div>
-
-        <script type="text/javascript"charset="utf-8"></script>
-        <script src="https://d3js.org/d3.v5.min.js"></script>
-        <script src="{{ url_for('static', filename='js/home.js')}}"></script>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/home.js')}}"></script>
         
 
 
