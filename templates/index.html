@@ -1,319 +1,311 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Plastic Problems
-        </title>
-        <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
-        <!-- CSS only -->
+<head>
+    <meta charset="UTF-8">
+    <title>Plastic Problems
+    </title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <!-- CSS only -->
 
 
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    </head>
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</head>
 
-    <body>
-        <script>
-            var table1 = '{{ table1|safe }}';
-            var table2 = '{{ table2|safe }}';
-            var table3 = '{{ table3|safe }}';
-            var table4 = '{{ table4|safe }}';
-            var table5 = '{{ table5|safe }}';
-            var table6 = '{{ table6|safe }}';
-            var table7 = '{{ table7|safe }}';
-            var table8 = '{{ table8|safe }}';
-        </script>
-        <script src="js/home.js"></script>
+<body>
+    <script>
+        var table1 = '{{ table1|safe }}';
+        var table2 = '{{ table2|safe }}';
+        var table3 = '{{ table3|safe }}';
+        var table4 = '{{ table4|safe }}';
+        var table5 = '{{ table5|safe }}';
+        var table6 = '{{ table6|safe }}';
+        var table7 = '{{ table7|safe }}';
+        var table8 = '{{ table8|safe }}';
+    </script>
+    <script src="js/home.js"></script>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a href="#" class="navbar-brand">
-                <img src="../img/logo.png" height="28" alt="The Plastic Problem">
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <a href="#" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">Cause</a>
-                    <a href="#" class="nav-item nav-link">Impacts</a>
-                    <a href="#" class="nav-item nav-link">Clean-Up</a>
-                    <a href="#" class="nav-item nav-link mr-auto">Pictures</a>   </li>
-                    
-                </div>
-                <div class="navbar-nav mr-auto">
-                    
-                        <li class="nav-item dropdown">
-                   
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" 
-                            data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle navigation">Data</a>
-                            
-                            
-                                <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
-
-                                    <a class="dropdown-item" href="{{ url_for('cleanup') }} ">Clean-Up data</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div></li>           
-                                <li class="nav-item"><ul class="navbar-nav mr-auto">
-                                
-                                </ul>
-
-                            </div>
-                                 
-            </div>
-            
-        </nav>
-
-        <div class="jumbotron-fluid";>
-            <div style= "background-image: url(../img/trash_banner.jpg);background-size: 100%; background-repeat: no-repeat; margin-right:0px; margin-left: 0px;">
-                <h1 style="text-align:center; color:white; font-weight: bold;  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; background: rgba(204, 204, 179,0.3)">The Plastic Problem </h1>
-                <br><br><br><br><br><br><br><br>
-                
-                
-            </div></div>
-            <p class="lead" style="color:black;text-align:center; background: rgba(204, 204, 179,0.3)"><b>Humanity has a problem. Pollution, we’re addicted to it. One of the largest contributors to this addiction is our love of plastic. Why? Because we are lazy and love convenience. It’s in everything, from packaging to construction to medical equipment. But when we’re done with it, where does this manmade material go?
-
-                This presentation will attempt to answer the below questions using the datasets outlined: </b>
-                <br>
-            </p>
-
-            <div class= "jumbotron" style= "padding-top:4px;padding-left: 0px; padding-right:0px; padding-bottom: 4px; margin-bottom: 4px;">
-                
-						<h1 style="text-align:center; color:white; font-weight: bold;  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; background: rgba(76, 175, 80, 0.6)">The silent truth of our Oceans</h1>
-						<div class="description">
-							<p style="color: darkslategrey;text-align: center">
-								
-							</p>
-                            <hr>
-                            <div class="col col-md-8  col-lg-8 offset-lg-2 ">
-                            <div id="carousel-example" class="carousel slide" style="align-items: center;">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example" data-slide-to="1"></li>
-                                    <li data-target="#carousel-example" data-slide-to="2"></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe
-                                                src="https://www.youtube.com/embed/Yomf5pBN8dY?controls=0&&amp;start=15&end=45&autoplay=1&mute=1&loop=1&playlist=Yomf5pBN8dY"
-                                                frameborder="0"
-                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                
-                                                width="50%" height="50%"></iframe>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe
-                                                src="https://www.youtube.com/embed/31CdhLMV7Es?controls=0&&amp;&autoplay=1&mute=1&loop=1&playlist=31CdhLMV7Es"
-                                                frameborder="0"
-                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                
-                                                width="50%" height="50%"></iframe>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe
-                                                src="https://www.youtube.com/embed/ZqTTSVM5TCo?controls=0&&amp;&autoplay=1&mute=1&loop=1&playlist=ZqTTSVM5TCo"
-                                                frameborder="0"
-                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                
-                                                width="50%" height="50%"></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-						</div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" id="navigationBar">
+        <a href="#" class="navbar-brand">
+            <img src="static/img/logo.png" height="28" alt="The Plastic Problem">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a href="{{ url_for('source')}}" class="nav-link">Source</a></li>
+                <li class="nav-item"><a href="{{ url_for('river')}}" class="nav-link">Path</a></li>
+                <li class="nav-item"><a href="{{ url_for('gal')}}" class="nav-link">Effect</a></li>
+                <li class="nav-item"><a href="{{url_for('resolution')}}" class="nav-link">Resolution</a></li>
+                <li class="nav-item"><a href="{{ url_for('gal2')}}" class="nav-link">Pictures</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Data</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/global_plastic_production">Global Plastic Production</a>
+                        <a class="dropdown-item" href="/plastic_waste_by_sector">Plastic Waste by Sector</a>
+                        <a class="dropdown-item" href="/plastic_fate">Plastic Garbage Fate</a>
+                        <a class="dropdown-item" href="/plastic_waste_generation_total">Plastic Waste by Country</a>
+                        <a class="dropdown-item" href="/impactstudies">Imapct Studies Data</a>
+                        <a class="dropdown-item" href="/surface_plastic_mass_by_ocean">Surface Ocean Plastic </a>
+                        <a class="dropdown-item" href="/summary_earth">Global CleanUp Event Data</a>
+                        <a class="dropdown-item" href="/cleanup">Global CleanUp Summary Data</a>
                     </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid m-5 p-5";>
+
+        <h1 style="text-align:center;" class="display-3">The Plastic Problem </h1>
+        <br><br>
+
+
+    
+    <p class="lead" style="text-align:center;">Humanity has a problem. Pollution, we’re addicted to it. One of the
+        largest contributors to this addiction is our love of plastic. Why? Because we are lazy and love convenience.
+        It’s in everything, from packaging to construction to medical equipment. But when we’re done with it, where does
+        this manmade material go?
+
+        This presentation will attempt to answer the below questions using the datasets outlined.
+    </b>
+    </p>
+
+
+
+    <hr class="my-2">
+
+    <div class="container px-5 pt-4">
+    <div class="row" style="font-size:18px">
+        
+        <div class="col-md-12 col-12"> 
+            
+            <h2 style="text-align:center;">Source</h2><hr>
+        
+        
+    
+                
+            
+
+
+            <a href="#"><img src="../img/source.png" width="45%" height="auto" ALIGN='left'
+                    style="margin-right:20px; border: 2px solid rgba(7, 7, 7) "></a><p class="lead">The plastics problem has been
+            growing exponentially for decades. In 1967, less than 25 million tons were produced each year. Yet by 1980,
+            production had doubled. Ten years later, it doubled again to 100 million tons, surpassing the amount of
+            steel produced globally. Today, the plastics industry, estimated to be worth more than $4 trillion,
+            generates more than 300 million tons of plastic a year according to the most recent records —
+            nearly half of which is for single-use items, meaning that it will almost instantly become trash.
+            <p class="lead"><br>Our analysis will show which countries and industries are responsible for world's plastic production.
+                We will also show how the three key options for handling plastic waste: recycling, incineration or
+                disposal are faring over the years. <br>
+            <p class="lead">Please click on the image to learn more.
+                </img>
+                <br>
+        </div>
+    </div><br><br>
+
+    <div class="row" style="font-size:18px">
+        <div class="col-md-12 col-12">
+            <h2 style="text-align:center;">Impacts</h2>
+            <hr>
+            <a href='#'><img src="../img/Great-Pacific-Garbage-Patch.png" width="45%" height="auto" ALIGN='right'
+                    style="margin-left:20px;border: 2px solid rgba(7, 7, 7); "></a><p class="lead"> Plastic enters the oceans from
+            coastlines, rivers, tides, and marine sources. But once it is there, where does it go?
+
+            The distribution and accumulation of ocean plastics is strongly influenced by oceanic surface currents and
+            wind patterns. Plastics are typically buoyant – meaning they float on the ocean surface –, allowing them to
+            be transported by the prevalent wind and surface current routes. As a result, plastics tend to accumulate in
+            oceanic gyres, with high concentrations of plastics at the centre of ocean basins, and much less around the
+            perimeters.
+            After entry to oceans from coastal regions, plastics tend to migrate towards the centre of ocean basins.
+            <p class= "lead"><br>Our analysis visually shows the garbage patches around the world and shows in tabular form the
+                specifically the type of injuries various animal species have been observed sustaining.</p>
+            <p class= "lead">Please click on the image to learn more.
+                </img>
+        </div>
+    </div>
+    <p>
+        <h2 style="text-align:center;">Clean-Up</h2>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 col-12">
+
+
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <div style="font-size: 18px;text-align: center;"> <p class= "lead">There are cleanup efforts underway to solve the plastic
+                issue that exists. We have provided a graph that shows
+                how much of each type plastic waste and other waste is being collected and also a world map that shows
+                where it is being collected.
+                <P class='lead'><br> Please click <a href='#'>here</a> to learn more</div>
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
+
+                .mySlides {
+                    display: none;
+                }
+
+                img {
+                    vertical-align: middle;
+                }
+
+                /* Slideshow container */
+                .slideshow-container {
+                    max-width: 1000px;
+                    position: relative;
+                    margin: auto;
+                    text-align: center;
+                }
+
+                /* Caption text */
+                .text {
+                    color: #f2f2f2;
+                    font-size: 15px;
+                    padding: 8px 12px;
+                    position: absolute;
+                    bottom: 8px;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                /* Number text (1/3 etc) */
+                .numbertext {
+                    color: #f2f2f2;
+                    font-size: 12px;
+                    padding: 8px 12px;
+                    position: absolute;
+                    top: 0;
+                }
+
+                /* The dots/bullets/indicators */
+                .dot {
+                    height: 15px;
+                    width: 15px;
+                    margin: 0 2px;
+                    background-color: #bbb;
+                    border-radius: 50%;
+                    display: inline-block;
+                    transition: background-color 0.6s ease;
+                }
+
+
+                /* Fading animation */
+                .fade {
+                    -webkit-animation-name: fade;
+                    -webkit-animation-duration: .5s;
+                    animation-name: fade;
+                    animation-duration: 7.5s;
+                }
+
+                @-webkit-keyframes fade {
+                    from {
+                        opacity: .4
+                    }
+
+                    to {
+                        opacity: 1
+                    }
+                }
+
+                @keyframes fade {
+                    from {
+                        opacity: .4
+                    }
+
+                    to {
+                        opacity: 1
+                    }
+                }
+
+                /* On smaller screens, decrease text size */
+                @media only screen and (max-width: 300px) {
+                    .text {
+                        font-size: 11px
+                    }
+                }
+            </style>
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="../img/Cleanup1.jpg" style="width:50%">
+
                 </div>
-                    
-				</div>
-                
 
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="../img/Cleanup2.jpg" style="width:50%">
 
-                
-                
-                <div class="row"  style= "font-size:18px">
-                    <div class="col-md-12 col-12" >
-                <h1 style="text-align:center; color:white; font-weight: bold;  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; background: rgba(76, 175, 80, 0.6)">Cause</h1>
-                
-                
-                <a href="#"><img src="../img/source.png" width="50%" height="auto" ALIGN= 'left' style="margin-right:10px; border: 2px solid rgba(7, 7, 7) "></a>The plastics problem has been growing exponentially for decades. In 1967, less than 25 million tons were produced each year. Even back then, the companies that made the plastic were already aware of the growing waste problem. Yet by 1980, production had doubled. Ten years later, it doubled again to 100 million tons, surpassing the amount of steel produced globally. Today, the plastics industry, estimated to be worth more than $4 trillion, generates more than 300 million tons of plastic a year according to the most recent records — 
-                nearly half of which is for single-use items, meaning that it will almost instantly become trash.  
-                <p><br>Our analysis will show which countries and industries are responsible for world's plastic production. We will also show how the three key options for handling plastic waste: recycling, incineration or disposal are faring over the years. <br><p>Please click on the image to learn more. 
-                    </img>
-                    <br></div></div>
+                </div>
 
-                    <div class="row"  style= "font-size:18px">
-                        <div class="col-md-12 col-12" >
-                <h1 style="text-align:center; color:white; font-weight: bold;  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; background: rgba(76, 175, 80, 0.6)">Impacts</h1>
-                <a href='#'><img src="../img/Great-Pacific-Garbage-Patch.png"  width="50%" height="auto" ALIGN= 'right' style="margin-right:10px;border: 2px solid rgba(7, 7, 7) " ></a> Plastic enters the oceans from coastlines, rivers, tides, and marine sources. But once it is there, where does it go?
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="../img/Cleanup4.jpg" style="width:50%">
 
-                    The distribution and accumulation of ocean plastics is strongly influenced by oceanic surface currents and wind patterns. Plastics are typically buoyant – meaning they float on the ocean surface –, allowing them to be transported by the prevalent wind and surface current routes. As a result, plastics tend to accumulate in oceanic gyres, with high concentrations of plastics at the centre of ocean basins, and much less around the perimeters. 
-                    After entry to oceans from coastal regions, plastics tend to migrate towards the centre of ocean basins.
-                <p><br>Our analysis visually shows the garbage patches around the world and shows in tabular form the specifically the type of injuries various animal species have been observed sustaining.</p>
-                </img></div></div>
-                <p><h1 style="text-align:center; color:white; font-weight: bold;  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; background: rgba(76, 175, 80, 0.6)">Clean-Up</h1>
-                    <div class="row"  style= "font-size:18px">
-                        <div class="col-md-12 col-12" >
-
-
-                            <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {box-sizing: border-box;}
-
-.mySlides {display: none;}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-  text-align: center;
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: .5s;
-  animation-name: fade;
-  animation-duration: 7.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-</style>
-                            <div class="slideshow-container">
-
-                                <div class="mySlides fade">
-                                  <div class="numbertext">1 / 3</div>
-                                  <img src="../img/Cleanup1.jpg" style="width:50%">
-                                  
-                                </div>
-                                
-                                <div class="mySlides fade">
-                                  <div class="numbertext">2 / 3</div>
-                                  <img src="../img/Cleanup2.jpg" style="width:50%">
-                                  
-                                </div>
-                                
-                                <div class="mySlides fade">
-                                  <div class="numbertext">3 / 3</div>
-                                  <img src="../img/Cleanup4.jpg" style="width:50%">
-                                  
-                                </div>
-                                
-                                </div>
-                                <br>
-                                
-                                <div style="text-align:center">
-                                  <span class="dot"></span> 
-                                  <span class="dot"></span> 
-                                  <span class="dot"></span> 
-                                </div>
-                                
-                                <script>
-                                var slideIndex = 0;
-                                showSlides();
-                                
-                                function showSlides() {
-                                  var i;
-                                  var slides = document.getElementsByClassName("mySlides");
-                                  var dots = document.getElementsByClassName("dot");
-                                  for (i = 0; i < slides.length; i++) {
-                                    slides[i].style.display = "none";  
-                                  }
-                                  slideIndex++;
-                                  if (slideIndex > slides.length) {slideIndex = 1}    
-                                  for (i = 0; i < dots.length; i++) {
-                                    dots[i].className = dots[i].className.replace(" active", "");
-                                  }
-                                  slides[slideIndex-1].style.display = "block";  
-                                  dots[slideIndex-1].className += " active";
-                                  setTimeout(showSlides, 8000); // Change image every 2 seconds
-                                }
-                                </script>
+                </div>
 
             </div>
+            <br>
 
-            
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <script>
+                var slideIndex = 0;
+                showSlides();
+
+                function showSlides() {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("dot");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) { slideIndex = 1 }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                    setTimeout(showSlides, 8000); // Change image every 2 seconds
+                }
+            </script>
+</div>
+        </div>
+
+
 
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script src="d3.min.js?v=3.2.8"></script>
         <script src="js/home.js"></script>
-        
-        
 
 
 
-        
-        </div>
 
-        <script type="text/javascript"charset="utf-8"></script>
-        <script src="paste custom js"></script>
-<div style= "font-size: 20px;text-align: center;"> There are cleanup efforts underway to solve the plastic issue that exists. We have provided a graph that shows 
-    how much of each type plastic waste and other waste is being collected and also a world map that shows where it is being collected. 
-    <P><br> Please click <a href='#'>here</a> to learn more</div>
-    </body>
+
+
+    </div>
+
+    <script type="text/javascript" charset="utf-8"></script>
+    <script src="paste custom js"></script>
+
+</div>
+</div>
+
+</body>
