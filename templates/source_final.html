@@ -34,38 +34,39 @@
 <body>
 
     <!-- Top menu -->
-    <div class="sticky-top" id="navigationBar">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a href="#" class="navbar-brand">
-                <img src="../img/logo.png" height="28" alt="The Plastic Problem">
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a href="{{ url_for('source')}}" class="nav-link">Source</a></li>
-                    <li class="nav-item"><a href="{{ url_for('gal')}}"  class="nav-link">Effect</a></li>
-                    <li class="nav-item"><a href="{{url_for('resolution')}}" class="nav-link">Resolution</a></li>
-                    <li class="nav-item"><a href="{{ url_for('gal2')}}" class="nav-link">Pictures</a></li>
-                
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Data</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Source Data</a>
-                            <a class="dropdown-item" href="#">River Routes</a>
-                            <a class="dropdown-item" href="#">Effect Data</a>
-                            <a class="dropdown-item" href="#">Resolution Data</a>
-                            <a class="dropdown-item" href="#">Pictures Data</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" id="navigationBar">
+        <a href="{{ url_for('index')}}" class="navbar-brand">
+            <img src="static/img/logo.png" height="65" alt="The Plastic Problem">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a href="{{ url_for('source')}}" class="nav-link">Source</a></li>
+                <li class="nav-item"><a href="{{ url_for('river')}}" class="nav-link">Path</a></li>
+                <li class="nav-item"><a href="{{ url_for('gal')}}" class="nav-link">Effect</a></li>
+                <li class="nav-item"><a href="{{url_for('resolution')}}" class="nav-link">Resolution</a></li>
+                <li class="nav-item"><a href="{{ url_for('gal2')}}" class="nav-link">Pictures</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Data</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/global_plastic_production">Global Plastic Production</a>
+                        <a class="dropdown-item" href="/plastic_waste_by_sector">Plastic Waste by Sector</a>
+                        <a class="dropdown-item" href="/plastic_fate">Plastic Garbage Fate</a>
+                        <a class="dropdown-item" href="/plastic_waste_generation_total">Plastic Waste by Country</a>
+                        <a class="dropdown-item" href="/impactstudies">Imapct Studies Data</a>
+                        <a class="dropdown-item" href="/surface_plastic_mass_by_ocean">Surface Ocean Plastic </a>
+                        <a class="dropdown-item" href="/summary_earth">Global CleanUp Event Data</a>
+                        <a class="dropdown-item" href="/cleanup">Global CleanUp Summary Data</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="jumbotron jumbotron-fluid m-5 p-5">
+    <div class="jumbotron jumbotron-fluid m-5 p-5" id="maptop">
         <!-- <h1> <strong>The Source of Plastic Pollution</strong></h1> -->
         
         <!-- ROW 1 -->
@@ -89,7 +90,7 @@
        <!-- ROW 3 -->
        <div class="row">
            <div class="col-6">
-               <div id="maptitle">
+               <div>
                    <h1>The Fate of Plastics Produced since 1950</h1>
                </div>
            </div>
@@ -119,9 +120,9 @@
 
                 <button class="btn " ><a href="{{ url_for('index')}}" style="color: darkslategrey;">Home</a></button>
                 <button class="btn " ><a href="{{ url_for('source')}}" style="color: darkslategrey;">Source</a></button>
-                <button class="btn " ><a href="#maptitle" style="color: darkslategrey;">Map</a></button>
+                <button class="btn " ><a href="#maptop" style="color: darkslategrey;">Map</a></button>
                 <button class="btn "><a href="#stackbar" style="color: darkslategrey;">Data Chart</a></button>
-                <button class="btn " ><a href="{{ url_for('river')}}" style="color: darkslategrey;">River Source</a></button>
+                <button class="btn " ><a href="{{ url_for('river')}}" style="color: darkslategrey;">Path</a></button>
             </div> 	
         </nav>
 

@@ -34,9 +34,9 @@ function createMap(markerData) {
   }
 
   function createMarkers(data){
-    var cleanupMarkers = [];
+    var cleanupMarkers = L.markerClusterGroup();
 
-    for (var index = 0; index < data.length; index++){
+    for (var index = 0; index < 5; index++){
         var cleanUpPoint = data[index];
 
         var cleanMarker = L.marker([cleanUpPoint.lat, cleanUpPoint.lon])
