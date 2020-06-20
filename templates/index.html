@@ -9,10 +9,10 @@
         <!-- CSS only -->
 
 
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -27,40 +27,32 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <a href="#" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">Cause</a>
-                    <a href="#" class="nav-item nav-link">Impacts</a>
-                    <a href="#" class="nav-item nav-link">Clean-Up</a>
-                    <a href="#" class="nav-item nav-link mr-auto">Pictures</a>   </li>
-                    
-                </div>
-                <div class="navbar-nav mr-auto">
-                    
-                        <li class="nav-item dropdown">
-                   
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" 
-                            data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle navigation">Data</a>
-                            
-                            
-                                <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
 
-                                    <a class="dropdown-item" href="/cleanup">Clean-Up data</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div></li>           
-                                <li class="nav-item"><ul class="navbar-nav mr-auto">
-                                
-                                </ul>
-
-                            </div>
-                                 
-            </div>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="{{ url_for('source')}}" class="nav-link">Source</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gal')}}"  class="nav-link">Effect</a></li>
+                    <li class="nav-item"><a href="{{url_for('resolution')}}" class="nav-link">Resolution</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gal2')}}" class="nav-link">Pictures</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Data
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Source Data</a>
+                            <a class="dropdown-item" href="#">Effect Data</a>
+                            <a class="dropdown-item" href="#">Resolution Data</a>
+                            <a class="dropdown-item" href="#">Pictures Data</a>
+                          </div>
+                    </li>
+                </ul>
             
+                                 
+
+            </div>
         </nav>
+
+
 
         <div class="jumbotron-fluid";>
             <div style= "background-image: url(../img/trash_banner.jpg);background-size: 100%; background-repeat: no-repeat; margin-right:0px; margin-left: 0px;">
@@ -192,6 +184,7 @@ img {vertical-align: middle;}
   text-align: center;
 }
 
+
 /* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
@@ -289,11 +282,17 @@ img {vertical-align: middle;}
 
             </div>
 
+
+     
+
+
+        
+
             
 
-        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="http://d3js.org/d3.v5.min.js"></script>
         <script src="d3.min.js?v=3.2.8"></script>
-        <script src="js/home.js"></script>
+       
         
         
 
@@ -307,4 +306,5 @@ img {vertical-align: middle;}
 <div style= "font-size: 20px;text-align: center;"> There are cleanup efforts underway to solve the plastic issue that exists. We have provided a graph that shows 
     how much of each type plastic waste and other waste is being collected and also a world map that shows where it is being collected. 
     <P><br> Please click <a href='#'>here</a> to learn more</div>
+
     </body>
