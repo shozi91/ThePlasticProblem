@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Source Page</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    
+
     <!-- Leaflet CSS & JS-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-    crossorigin=""/>
-    
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin="" />
+
     <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-    crossorigin=""></script>
+        integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+        crossorigin=""></script>
 
     <!-- d3 JavaScript -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -24,7 +25,7 @@
 
     <!-- Map CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/map_style.css">
-    
+
 
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
 </head>
@@ -32,37 +33,103 @@
 
 <body>
 
-    <div class = "jumbotron">
-        <div class = "row">
-            <div>
-                <h1>PLASTIC WASTE BY COUNTRY</h1>
+    <!-- Top menu -->
+    <div class="sticky-top" id="navigationBar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a href="#" class="navbar-brand">
+                <img src="../img/logo.png" height="28" alt="The Plastic Problem">
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="{{ url_for('source')}}" class="nav-link">Source</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gal')}}"  class="nav-link">Effect</a></li>
+                    <li class="nav-item"><a href="{{url_for('resolution')}}" class="nav-link">Resolution</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gal2')}}" class="nav-link">Pictures</a></li>
+                
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Data</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Source Data</a>
+                            <a class="dropdown-item" href="#">River Routes</a>
+                            <a class="dropdown-item" href="#">Effect Data</a>
+                            <a class="dropdown-item" href="#">Resolution Data</a>
+                            <a class="dropdown-item" href="#">Pictures Data</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
+        </nav>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid m-5 p-5">
+        <!-- <h1> <strong>The Source of Plastic Pollution</strong></h1> -->
+        
+        <!-- ROW 1 -->
+        <div class="row">
+            <div>
+                <h1 class="ml-4">Plastic Waste by Country</h1>
+            </div>
+            <hr>
         </div>
-        <div class = "row">
-            <div class = "col-12">
-                <div id = "map" style = "height:500px"></div>
+        
+        <!-- ROW 2 -->
+        <div class="row">
+            <div class="col-12">
+                <div id="map" style="height:600px"></div>
             </div>
         </div>
 
-        <div class = "row">
-            <div class = "col-6">
-                <div id = "stackbar"></div>
+       <br>
+       <br>
+        
+       <!-- ROW 3 -->
+       <div class="row">
+           <div class="col-6">
+               <div id="maptitle">
+                   <h1>The Fate of Plastics Produced since 1950</h1>
+               </div>
+           </div>
+
+           <div class="col-6">
+                <h1>Plastic Waste by Sector (tonnes and %)</h1>
             </div>
-            
-            <div class = "col-6">
-                <div id = "plot"></div>
+       </div>
+       <hr>
+        <!-- ROW 4 -->
+        <div class="row">
+            <!-- STACKED BAR CHART  -->
+            <div class="col-6">
+                <div id="stackbar"></div>
+            </div>
+            <!-- STACKED BAR CHART  -->
+            <div class="col-6">
+                <div id="plot"></div>
             </div>
         </div>
 
     </div>
-    
 
+        <nav class="navbar navbar-light bg-light fixed-bottom" style="opacity: 0.5;">
+            <div class="btn-group container text">
+
+
+                <button class="btn " ><a href="{{ url_for('index')}}" style="color: darkslategrey;">Home</a></button>
+                <button class="btn " ><a href="{{ url_for('source')}}" style="color: darkslategrey;">Source</a></button>
+                <button class="btn " ><a href="#maptitle" style="color: darkslategrey;">Map</a></button>
+                <button class="btn "><a href="#stackbar" style="color: darkslategrey;">Data Chart</a></button>
+                <button class="btn " ><a href="{{ url_for('river')}}" style="color: darkslategrey;">River Source</a></button>
+            </div> 	
+        </nav>
 
     <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
     <script src="static/js/pie.js"></script>
     <script type="text/javascript" src="static/js/config.js"></script>
     <script type="text/javascript" src="static/js/source_final.js"></script>
-    
+
 </body>
 
 </html>
