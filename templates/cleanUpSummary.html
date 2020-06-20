@@ -14,13 +14,31 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         
+        <!-- Leaflet JS & CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin=""/>
+        <!-- <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+        integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+        crossorigin=""></script> -->
+        
+        <!-- d3 JS -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+            <!-- Marker Cluster JS & CSS -->
+        <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+        <!-- Our CSS -->
+        <link rel="stylesheet" type="text/css" href="static/css/cluster.css">
 
     </head>
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" id="navigationBar">
-            <a href="#" class="navbar-brand">
-                <img src="static/img/logo.png" height="28" alt="The Plastic Problem">
+            <a href="{{ url_for('index')}}" class="navbar-brand">
+                <img src="static/img/logo.png" height="65" alt="The Plastic Problem">
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,7 +100,7 @@
         <script type="text/javascript" src="static/js/d3-funnel.js"></script>
         <script type="text/javascript" src="static/js/config.js"></script>
         <script type="text/javascript" src="static/js/cleanUpSummary.js"></script>
-        <script type="text/javascript" src="static/js/cleanUpMap.js"></script>
+        <script type="text/javascript" src="static/js/cleanUpMap_final.js"></script>
         
 
         
