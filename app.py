@@ -45,17 +45,10 @@ def index():
 
 @app.route("/gal")
 def gal():
-    print('test')
-    connection = engine.connect()
-    table3 = pd.read_sql(sql=f"Select * FROM {x[2]}", con=connection)
-    tablehtml = table3.to_html()
-    tablejson = table3.to_json(orient='records')
-    connection.close()
-    return render_template("gal.html",tablehtml=tablehtml, tablejson=tablejson )
+    return render_template("gal.html" )
 
 @app.route("/gal2")
 def gal2():
-    print('test')
     return render_template("gal2.html")
 
 @app.route("/resolution")
@@ -66,7 +59,7 @@ def resolution():
 @app.route("/source")
 def source():
     
-    return render_template("source.html")
+    return render_template("source_final.html")
 
 @app.route("/river")
 def river():
@@ -96,9 +89,7 @@ def t2():
     connection.close()
     return table2
 
-@app.route("/source")
-def source():
-    return render_template("source_final.html")
+
 
 @app.route("/impactstudies")
 def t3():
