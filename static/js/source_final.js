@@ -3,7 +3,7 @@
 
 
 d3.json("/plastic_waste_by_sector").then(function (data) {
-  console.log(data)
+
 
   var labels = []
   var values = []
@@ -21,7 +21,9 @@ d3.json("/plastic_waste_by_sector").then(function (data) {
     marker: {
       colors: ["#fd948d","#fe7067","#fd5042","#fe4132","#ed2617","#e22113","#cb1b0e","#bf170a","#b61509","#a51207","#991107","#840d04","#7a0b03","#670901","#5c0702","#470500","#3b0300","#290200"]
     },
-    
+    direction:"clockwise",
+    rotation: -45,
+    hole: 0.3,
     type: 'pie'
   };
 
@@ -30,12 +32,11 @@ d3.json("/plastic_waste_by_sector").then(function (data) {
   var layout = {
     plot_bgcolor:"#eee",
     paper_bgcolor:"#eee"
+    
   };
 
   Plotly.newPlot("plot", data, layout);
 
-  console.log(labels)
-  console.log(values)
 
 });
 
@@ -43,7 +44,7 @@ d3.json("/plastic_waste_by_sector").then(function (data) {
 
 
 d3.csv("static/data/global_plastics_production_and_waste.csv").then(function (data) {
-  console.log(data)
+
 
   var x = []
   var y1 = []
@@ -83,7 +84,9 @@ d3.csv("static/data/global_plastics_production_and_waste.csv").then(function (da
     barmode: 'stack',
     plot_bgcolor:"#eee",
     paper_bgcolor:"#eee",
-    fillcolor: "#eee"
+    fillcolor: "#eee",
+    showlegend : true,
+    legend: {"orientation": "h"}
   };
 
   Plotly.newPlot('stackbar', data, layout)
@@ -148,7 +151,6 @@ function drawMap(data) {
     var limits = geojson.options.limits;
     var colors = geojson.options.colors;
     var labels = [];
-    console.log(limits)
 
     // Add min & max
     var legendInfo = "<h1>Plastic Waste (tonnes)</h1>" +
@@ -174,6 +176,4 @@ function drawMap(data) {
 // Grab data with d3
 d3.json("/plastic_waste_generation_total").then(function (data) {
   drawMap(data)
-
-  console.log(data)
 });
