@@ -13,8 +13,8 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" id="navigationBar">
-        <a href="#" class="navbar-brand">
-            <img src="static/img/logo.png" height="28" alt="The Plastic Problem">
+        <a href="{{ url_for('index')}}" class="navbar-brand">
+            <img src="static/img/logo.png" height="65" alt="The Plastic Problem">
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,7 +83,7 @@
 
 
             <button class="btn "><a href="{{ url_for('index')}}" style="color: darkslategrey;">Home</a></button>
-            <button class="btn "><a href="{{ url_for('index')}}" style="color: darkslategrey;">Source</a></button>
+            <button class="btn "><a href="{{ url_for('source')}}" style="color: darkslategrey;">Source</a></button>
             <button class="btn "><a href="{{ url_for('gal')}}" style="color: darkslategrey;">Effects</a></button>
 
         </div>
