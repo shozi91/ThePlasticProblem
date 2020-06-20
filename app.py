@@ -149,3 +149,5 @@ def t8():
     connection.close()
     return table8
 
+if __name__ == "__main__":
+    app.run(debug=True)
