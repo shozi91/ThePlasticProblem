@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Basic Map</title>
+
+        <!-- Leaflet CSS & JS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+        integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+        crossorigin=""></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+        CSS
+        <style>
+        .countries {
+            fill: none;
+            stroke: #fff;
+            stroke-linejoin: round;
+        }
+        .legendThreshold {
+            font-size: 12px;
+            font-family: sans-serif;
+        }
+        .caption {
+            fill: #000;
+            text-anchor: start;
+            font-weight: bold;
+        }
+        </style>
+    </head>
+
+    <body>
+        
+        <svg width="960" height="600"></svg>
+    
+        <script src="https://d3js.org/d3.v5.js" charset="utf-8"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+        <script src="https://d3js.org/topojson.v1.min.js"></script>
+        <script src="https://d3js.org/queue.v1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+        <script type="text/javascript" src="static/logic-attempt1.js"></script>
+        <div id = "myDiv"></div>
+        <svg width="960" height="600"></svg>
+        <!-- <div id = "myDiv"></div> -->
+
+    </body>
+
+</html>

@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, MetaData
 import pandas as pd
 from flask import Flask, jsonify
+import requests
 from datetime import datetime
 #################################################
 # Database Setup
@@ -44,17 +45,10 @@ def index():
 
 @app.route("/gal")
 def gal():
-    print('test')
-    connection = engine.connect()
-    table3 = pd.read_sql(sql=f"Select * FROM {x[2]}", con=connection)
-    tablehtml = table3.to_html()
-    tablejson = table3.to_json(orient='records')
-    connection.close()
-    return render_template("gal.html",tablehtml=tablehtml, tablejson=tablejson )
+    return render_template("gal.html" )
 
 @app.route("/gal2")
 def gal2():
-    print('test')
     return render_template("gal2.html")
 
 @app.route("/resolution")
@@ -65,7 +59,7 @@ def resolution():
 @app.route("/source")
 def source():
     
-    return render_template("source.html")
+    return render_template("source_final.html")
 
 @app.route("/river")
 def river():
@@ -95,6 +89,8 @@ def t2():
     connection.close()
     return table2
 
+
+
 @app.route("/impactstudies")
 def t3():
     connection = engine.connect()
@@ -119,8 +115,26 @@ def t5():
 @app.route("/plastic_waste_generation_total")
 def t6():
     connection = engine.connect()
-    table6 = pd.read_sql(sql=f"Select * FROM {x[5]}", con=connection).to_json(orient='records')
+    country_df = pd.read_sql_query(sql=f"Select * FROM {x[5]}", con=connection)
     connection.close()
+
+    response = requests.get("http://enjalot.github.io/wwsd/data/world/world-110m.geojson")
+
+    geoData = response.json()
+
+    for feature in geoData["features"]:
+        country_name = feature["properties"]['name']
+        plastic_waste = country_df.loc[country_df["Entity"] == country_name]["Plastic_Waste_Generation_tonnes"].values    
+  
+        if len(plastic_waste) > 0:
+            feature["properties"]["plastic_waste"] = int(plastic_waste[0])
+        else:
+            feature["properties"]["plastic_waste"] = None
+
+            
+
+    table6 = jsonify(geoData)
+
     return table6
 
 @app.route("/summary_earth")

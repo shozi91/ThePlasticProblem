@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Source Page</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <!-- Leaflet CSS & JS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+    
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- Leaflet-Choropleth JavaScript -->
+    <script type="text/javascript" src="static/choropleth/choropleth.js"></script>
+
+    <!-- Map CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/map_style.css">
+    
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+</head>
+
+
+<body>
+
+    <div class = "jumbotron">
+        <div class = "row">
+            <div>
+                <h1>PLASTIC WASTE BY COUNTRY</h1>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-12">
+                <div id = "map" style = "height:500px"></div>
+            </div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-6">
+                <div id = "stackbar"></div>
+            </div>
+            
+            <div class = "col-6">
+                <div id = "plot"></div>
+            </div>
+        </div>
+
+    </div>
+    
+
+
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="static/js/pie.js"></script>
+    <script type="text/javascript" src="static/js/config.js"></script>
+    <script type="text/javascript" src="static/js/source_final.js"></script>
+    
+</body>
+
+</html>
