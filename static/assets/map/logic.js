@@ -45,6 +45,35 @@ for (var i = 0; i < cities.length; i++) {
   }).bindPopup("<h1>" + cities[i].Entity + "</h1> <hr> <h3>Tonnes of Plastic Garbage: " + cities[i].All_sizes_tonnes + "</h3>").addTo(myMap);
 }
 
+
+myMap.fitBounds([
+  [36.64,-141.41],
+  [-20.73, 78.81]])
+
+  
+//   $('.navbar-expand').on('shown.bs.collapse', function() {
+//     myMap.fitBounds([
+//       [36.64,-141.41],
+//       [-20.73, 78.81]])
+//   });
+
+
+// $('.navbar-collapse').on('shown.bs.collapse', function() {
+//   myMap.fitBounds([
+//     [36.64,-141.41],
+//     [-20.73, 78.81]])
+// });
+
+window.addEventListener("resize", myFunction);
+
+
+function myFunction() {
+  myMap.fitBounds([
+    [36.64,-141.41],
+    [-20.73, 78.81]])
+};
+
+
 // /*Scroll to top when arrow up clicked BEGIN*/
 // $(window).scroll(function() {
 //   var height = $(window).scrollTop();
