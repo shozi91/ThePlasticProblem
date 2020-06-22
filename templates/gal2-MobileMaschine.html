@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Sadness Gallery</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+	<link rel="stylesheet" href="static/assets/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="static/assets/css/style.css">
+	<link rel="stylesheet" href="static/assets/css/media-queries.css">
+	
+
+
+
+</head>
+
+<body style="background-color: white;">
+
+	<!-- Top menu -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" id="navigationBar">
+        <a href="{{ url_for('index')}}" class="navbar-brand">
+            <img src="static/img/logo.png" height="65" alt="The Plastic Problem">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a href="{{ url_for('source')}}" class="nav-link">Source</a></li>
+                <li class="nav-item"><a href="{{ url_for('river')}}" class="nav-link">Path</a></li>
+                <li class="nav-item"><a href="{{ url_for('gal')}}" class="nav-link">Effect</a></li>
+                <li class="nav-item"><a href="{{url_for('resolution')}}" class="nav-link">Resolution</a></li>
+                <li class="nav-item"><a href="{{ url_for('gal2')}}" class="nav-link">Pictures</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Data</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/global_plastic_production">Global Plastic Production</a>
+                        <a class="dropdown-item" href="/plastic_waste_by_sector">Plastic Waste by Sector</a>
+                        <a class="dropdown-item" href="/plastic_fate">Plastic Garbage Fate</a>
+                        <a class="dropdown-item" href="/plastic_waste_generation_total">Plastic Waste by Country</a>
+                        <a class="dropdown-item" href="/impactstudies">Imapct Studies Data</a>
+                        <a class="dropdown-item" href="/surface_plastic_mass_by_ocean">Surface Ocean Plastic </a>
+                        <a class="dropdown-item" href="/summary_earth">Global CleanUp Event Data</a>
+                        <a class="dropdown-item" href="/cleanup">Global CleanUp Summary Data</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+	<div class="container m-1 p-1">
+		<p>A</p>
+	</div>
+	<div class="jumbotron jumbotron-fluid m-5 p-5">
+		<div class="top-content">
+
+			<div class="container">
+				<!-- Title and description row -->
+				<div class="row">
+					<div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 " style="text-align: center;">
+						<h1 style="color: darkslategrey;">The silent truth of our Oceans</h1>
+						<div class="description" id="carousel-example">
+							<p style="color: darkslategrey;">
+								Please take a moment and watch these video clips and pictures to understand the sadness that
+								exist.
+							</p>
+							<hr>
+						</div>
+					</div>
+				</div>
+				<!-- End title and description row -->
+				<!-- Carousel row -->
+				<div class="row">
+					<div class="col col-md-12  col-lg-12 ">
+						<!-- Carousel -->
+						<div class="carousel slide">
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+								<li data-target="#carousel-example" data-slide-to="1"></li>
+								<li data-target="#carousel-example" data-slide-to="2"></li>
+							</ol>
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<div class="embed-responsive embed-responsive-16by9">
+										<iframe
+											src="https://www.youtube.com/embed/Yomf5pBN8dY?controls=0&&amp;start=15&end=45&autoplay=1&mute=1&loop=1&playlist=Yomf5pBN8dY"
+											frameborder="0"
+											allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+											allowfullscreen></iframe>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<div class="embed-responsive embed-responsive-16by9">
+										<iframe
+											src="https://www.youtube.com/embed/31CdhLMV7Es?controls=0&&amp;&autoplay=1&mute=1&loop=1&playlist=31CdhLMV7Es"
+											frameborder="0"
+											allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+											allowfullscreen></iframe>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<div class="embed-responsive embed-responsive-16by9">
+										<iframe
+											src="https://www.youtube.com/embed/ZqTTSVM5TCo?controls=0&&amp;&autoplay=1&mute=1&loop=1&playlist=ZqTTSVM5TCo"
+											frameborder="0"
+											allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+											allowfullscreen></iframe>
+									</div>
+								</div>
+							</div>
+							<a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+						<!-- End carousel -->
+					</div>
+				</div>
+				<!-- End carousel row -->
+			</div>
+		</div>
+
+		<!-- Section 1 -->
+		<div class="m-5 p-5">
+			<h1 style="color: darkslategrey;">Real life every day Pictures</h1>
+			<hr> 
+			<div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails  " data-ride="carousel">
+				<!--Slides-->
+
+				<div class="carousel-inner" role="listbox">
+					<div class="carousel-item active">
+						<img class="d-block w-100"
+							src="https://www.telegraph.co.uk/content/dam/science/2017/02/10/seal1-xlarge_trans_NvBQzQNjv4BqC_LLCXkS_z-CZqgOMP7BewJPRV3mEWc1JIB4HAWdEJE.jpg"
+							alt="First slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100"
+							src="https://i.pinimg.com/originals/2c/70/04/2c7004c565847cef42b0522655367ec3.jpg"
+							alt="Second slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100"
+							src="https://www.plantbasednews.org/.image/t_share/MTY1NTk1NzkyNDM2ODMyMDM3/image-placeholder-title.jpg"
+							alt="Third slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100"
+							src="https://media.nationalgeographic.org/assets/photos/331/234/f9318369-1ec8-4357-b6ae-b6c10f439871_c0-602-2000-1934_r800x533.jpg?f6491e64f8b28bd4c11be0e454cb070a37bc97ad"
+							alt="First slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100"
+							src="https://www.greenpeace.org/usa/wp-content/uploads/2018/04/GP0STR1T7_Medium_res-970xcenter-c-default.jpg"
+							alt="Second slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100"
+							src="https://www.globaltimes.cn/Portals/0/attachment/2018/2018-09-06/cc58c662-a65f-4089-a1db-353ea5f4a0dd.jpeg"
+							alt="Third slide">
+					</div>
+				</div>
+				<!--/.Slides-->
+				<!--Controls-->
+				<div class="section-1-container section-container">
+					<div class="container section-1">
+			
+					</div>
+				</div>
+
+				<a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+				<!--/.Controls-->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-thumb" data-slide-to="0" class="active"> <img class="d-block w-100 "
+							src="https://www.telegraph.co.uk/content/dam/science/2017/02/10/seal1-xlarge_trans_NvBQzQNjv4BqC_LLCXkS_z-CZqgOMP7BewJPRV3mEWc1JIB4HAWdEJE.jpg"
+							class="img-fluid" style="width:200px; height:100px"></li>
+					<li data-target="#carousel-thumb" data-slide-to="1"><img class="d-block w-100  "
+							src="https://i.pinimg.com/originals/2c/70/04/2c7004c565847cef42b0522655367ec3.jpg"
+							class="img-fluid" width="100" height="100"></li>
+					<li data-target="#carousel-thumb" data-slide-to="2"><img class="d-block w-100 "
+							src="https://www.plantbasednews.org/.image/t_share/MTY1NTk1NzkyNDM2ODMyMDM3/image-placeholder-title.jpg"
+							class="img-fluid" width="100" height="100"></li>
+					<li data-target="#carousel-thumb" data-slide-to="3"> <img class="d-block w-100 "
+							src="https://media.nationalgeographic.org/assets/photos/331/234/f9318369-1ec8-4357-b6ae-b6c10f439871_c0-602-2000-1934_r800x533.jpg?f6491e64f8b28bd4c11be0e454cb070a37bc97ad"
+							class="img-fluid" width="100" height="100"></li>
+					<li data-target="#carousel-thumb" data-slide-to="4"><img class="d-block w-100 "
+							src="https://www.greenpeace.org/usa/wp-content/uploads/2018/04/GP0STR1T7_Medium_res-970xcenter-c-default.jpg"
+							class="img-fluid" width="100" height="100"></li>
+					<li data-target="#carousel-thumb" data-slide-to="5"><img class="d-block w-100 "
+							src="https://www.globaltimes.cn/Portals/0/attachment/2018/2018-09-06/cc58c662-a65f-4089-a1db-353ea5f4a0dd.jpeg"
+							class="img-fluid" width="100" height="100"></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-light bg-light fixed-bottom" style="opacity: 0.6;">
+		<div class="btn-group container text">
+
+			<button class="btn " ><a href="{{ url_for('index')}}" style="color: darkslategrey;">Home</a></button>		
+			<button class="btn " ><a href="{{ url_for('gal')}}" style="color: darkslategrey;">Effects</a></button>
+			<button class="btn "><a href="#carousel-example" style="color: darkslategrey;">Videos</a></button>
+			<button class="btn "><a href="#carousel-thumb" style="color: darkslategrey;">Gallery</a> </button> 
+			<button class="btn "><a href="{{ url_for('resolution')}}" style="color: darkslategrey;">Solution</a> </button> 
+		
+		</div> 	
+	</nav>
+
+
+
+	
+
+
+
+	
+
+
+
+	<!-- Javascript -->
+	<script src="static/assets/js/jquery-3.3.1.min.js"></script>
+	<script src="static/assets/js/jquery-migrate-3.0.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="static/assets/js/jquery.backstretch.min.js"></script>
+	<script src="static/assets/js/wow.min.js"></script>
+	<script src="static/assets/js/waypoints.min.js"></script>
+	<script src="static/assets/js/scripts.js"></script>
+
+</body>
+
+</html>
