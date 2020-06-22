@@ -59,6 +59,10 @@ def resolution():
 def source():
     return render_template("source_final.html")
 
+@app.route("/creators")
+def source():
+    return render_template("creators.html")
+
 @app.route("/river")
 def river():
     
