@@ -60,7 +60,7 @@ def source():
     return render_template("source_final.html")
 
 @app.route("/creators")
-def source():
+def creators():
     return render_template("creators.html")
 
 @app.route("/river")
