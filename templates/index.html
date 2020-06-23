@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <title>Plastic Problems
     </title>
-    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
     <!-- CSS only -->
-
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
 
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -23,18 +23,6 @@
 </head>
 
 <body>
-    <script>
-        var table1 = '{{ table1|safe }}';
-        var table2 = '{{ table2|safe }}';
-        var table3 = '{{ table3|safe }}';
-        var table4 = '{{ table4|safe }}';
-        var table5 = '{{ table5|safe }}';
-        var table6 = '{{ table6|safe }}';
-        var table7 = '{{ table7|safe }}';
-        var table8 = '{{ table8|safe }}';
-    </script>
-    <script src="js/home.js"></script>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" id="navigationBar">
         <a href="{{ url_for('index')}}" class="navbar-brand">
             <img src="static/img/logo.png" height="65" alt="The Plastic Problem">
@@ -97,7 +85,7 @@
             <h2 style="text-align:center;">Source</h2><hr class = "hr-subtitle">
 
 
-            <a href="{{ url_for('source')}}"><img class = "img-shadow" src="static/img/source.png" width="45%" height="auto" ALIGN='left'
+            <a href="#"><img class = "img-shadow" src="static/img/source.png" width="45%" height="auto" ALIGN='left'
                     style="margin-right:20px;"></a><p class="lead">The plastics problem has been
             growing exponentially for decades. In 1967, less than 25 million tons were produced each year. Yet by 1980,
             production had doubled. Ten years later, it doubled again to 100 million tons, surpassing the amount of
@@ -116,7 +104,7 @@
     <div class="row" style="font-size:18px">
         <div class="col-md-12 col-12">
             <h2 style="text-align:center;">Impacts</h2><hr class = "hr-subtitle">
-            <a href='{{ url_for('gal')}}'><img class = "img-shadow" src="static/img/Great-Pacific-Garbage-Patch.png" width="45%" height="auto" ALIGN='right'
+            <a href='#'><img class = "img-shadow" src="static/img/Great-Pacific-Garbage-Patch.png" width="45%" height="auto" ALIGN='right'
                     style="margin-left:20px;"></a><p class="lead"> Plastic enters the oceans from
             coastlines, rivers, tides, and marine sources. But once it is there, where does it go?
 
@@ -144,102 +132,8 @@
                 issue that exists. We have provided a graph that shows
                 how much of each type plastic waste and other waste is being collected and also a world map that shows
                 where it is being collected.
-                <P class='lead'><br> Please click <a href='{{url_for('resolution')}}'>here</a> to learn more</div>
-            <style>
-                * {
-                    box-sizing: border-box;
-                }
+                <P class='lead'><br> Please click <a href='#'>here</a> to learn more</div>
 
-                .mySlides {
-                    display: none;
-                }
-
-                img {
-                    vertical-align: middle;
-                }
-
-                /* Slideshow container */
-                .slideshow-container {
-                    max-width: 1000px;
-                    position: relative;
-                    margin: auto;
-                    text-align: center;
-                }
-
-                /* Caption text */
-                .text {
-                    color: #f2f2f2;
-                    font-size: 15px;
-                    padding: 8px 12px;
-                    position: absolute;
-                    bottom: 8px;
-                    width: 100%;
-                    text-align: center;
-                }
-
-                /* Number text (1/3 etc) */
-                .numbertext {
-                    color: #f2f2f2;
-                    font-size: 12px;
-                    padding: 8px 12px;
-                    position: absolute;
-                    top: 0;
-                }
-
-                /* The dots/bullets/indicators */
-                .dot {
-                    height: 15px;
-                    width: 15px;
-                    margin: 0 2px;
-                    background-color: #bbb;
-                    border-radius: 50%;
-                    display: inline-block;
-                    transition: background-color 0.6s ease;
-                }
-
-
-                /* Fading animation */
-                .fade {
-                    -webkit-animation-name: fade;
-                    -webkit-animation-duration: .5s;
-                    animation-name: fade;
-                    animation-duration: 7.5s;
-                }
-
-                .hr-subtitle{
-                    width:10%;
-                }
-                .img-shadow{
-                    box-shadow: 5px 5px 5px grey;
-                }
-
-                @-webkit-keyframes fade {
-                    from {
-                        opacity: .4
-                    }
-
-                    to {
-                        opacity: 1
-                    }
-                }
-
-                @keyframes fade {
-                    from {
-                        opacity: .4
-                    }
-
-                    to {
-                        opacity: 1
-                    }
-                }
-
-                /* On smaller screens, decrease text size */
-                @media only screen and (max-width: 300px) {
-                    .text {
-                        font-size: 11px
-                    }
-                }
-            </style>
             <div class="slideshow-container">
 
                 <div class="mySlides fade">
@@ -270,27 +164,6 @@
                 <span class="dot"></span>
             </div>
 
-            <script>
-                var slideIndex = 0;
-                showSlides();
-
-                function showSlides() {
-                    var i;
-                    var slides = document.getElementsByClassName("mySlides");
-                    var dots = document.getElementsByClassName("dot");
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                    }
-                    slideIndex++;
-                    if (slideIndex > slides.length) { slideIndex = 1 }
-                    for (i = 0; i < dots.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active", "");
-                    }
-                    slides[slideIndex - 1].style.display = "block";
-                    dots[slideIndex - 1].className += " active";
-                    setTimeout(showSlides, 8000); // Change image every 2 seconds
-                }
-            </script>
 </div>
         </div>
 
@@ -312,7 +185,7 @@
     </div>
 
     <script type="text/javascript" charset="utf-8"></script>
-    <script src="paste custom js"></script>
+    <script src="static/js/imageSlideshow.js"></script>
 
 </div>
 </div>
