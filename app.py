@@ -73,6 +73,7 @@ def data():
     
     return render_template("data.html")
 
+
 @app.route("/cleanup")
 def t1():
     connection = engine.connect()
