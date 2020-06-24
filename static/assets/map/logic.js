@@ -46,9 +46,9 @@ for (var i = 0; i < cities.length; i++) {
 }
 
 
-myMap.fitBounds([
-  [36.64,-141.41],
-  [-20.73, 78.81]])
+//myMap.fitBounds([
+ // [36.64,-141.41],
+  //[-20.73, 78.81]])
 
   
 //   $('.navbar-expand').on('shown.bs.collapse', function() {
