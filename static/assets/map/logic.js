@@ -64,7 +64,7 @@ myMap.fitBounds([
 //     [-20.73, 78.81]])
 // });
 
-window.addEventListener("resize", myFunction);
+//window.addEventListener("resize", myFunction);
 
 
 function myFunction() {
