@@ -67,11 +67,11 @@ myMap.fitBounds([
 //window.addEventListener("resize", myFunction);
 
 
-function myFunction() {
-  myMap.fitBounds([
-    [36.64,-141.41],
-    [-20.73, 78.81]])
-};
+//function myFunction() {
+  //myMap.fitBounds([
+    //[36.64,-141.41],
+   // [-20.73, 78.81]])
+//};
 
 
 // /*Scroll to top when arrow up clicked BEGIN*/
