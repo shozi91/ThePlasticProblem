@@ -32,6 +32,7 @@ form.on("submit", runEnter);
 
 // Complete the event handler function for the form
 function runEnter() {
+    d3.event.preventDefault();
     d3.json("/impactstudies").then(function (data) {
         console.log(data)
 
