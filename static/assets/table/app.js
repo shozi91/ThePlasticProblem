@@ -37,7 +37,7 @@ form.on("submit", runEnter);
 // Complete the event handler function for the form
 function runEnter() {
     d3.json("/impactstudies").then(function (data) {
-        console.log(data)
+        console.log("we re loaded")
 
         //clean the table
         tbody.html("");
