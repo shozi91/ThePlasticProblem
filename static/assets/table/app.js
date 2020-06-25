@@ -41,6 +41,9 @@ function runEnter() {
 
         // Prevent the page from refreshing
         // d3.event.preventDefault();
+        document.getElementById("myAnchor").addEventListener("click", function(event){
+  event.preventDefault()
+});
 
 
 
