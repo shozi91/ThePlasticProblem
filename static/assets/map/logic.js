@@ -47,7 +47,7 @@ for (var i = 0; i < cities.length; i++) {
 
 
 myMap.fitBounds([
- [36.64,-141.41],
+  [36.64,-141.41],
   [-20.73, 78.81]])
 
   
@@ -68,10 +68,9 @@ window.addEventListener("resize", myFunction);
 
 
 function myFunction() {
-  d3.event.preventDefault();
   myMap.fitBounds([
     [36.64,-141.41],
-   [-20.73, 78.81]])
+    [-20.73, 78.81]])
 };
 
 
