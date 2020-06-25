@@ -37,11 +37,11 @@ function runEnter() {
 
         //clean the table
         tbody.html("");
-        d3.event.preventDefault();
+        
 
 
         // Prevent the page from refreshing
-        // d3.event.preventDefault();
+        d3.event.preventDefault();
 
 
 
