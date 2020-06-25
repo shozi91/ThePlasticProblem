@@ -24,7 +24,11 @@ d3.json("/impactstudies").then(function (data) {
 var form = d3.select("form");
 
 // Select the button
-var button = d3.select("#filter-btn");
+// var button = d3.select("#filter-btn");
+var button = document.getElementById("filter-btn").addEventListener("click", function(event){
+    event.preventDefault();
+   runEnter();
+});
 
 // Create event handlers 
 button.on("click", runEnter);
@@ -41,9 +45,6 @@ function runEnter() {
 
         // Prevent the page from refreshing
         // d3.event.preventDefault();
-        button.addEventListener("click", function(event){
-  event.preventDefault()
-});
 
 
 
