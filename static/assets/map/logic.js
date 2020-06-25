@@ -46,9 +46,9 @@ for (var i = 0; i < cities.length; i++) {
 }
 
 
-//myMap.fitBounds([
- // [36.64,-141.41],
-  //[-20.73, 78.81]])
+myMap.fitBounds([
+ [36.64,-141.41],
+  [-20.73, 78.81]])
 
   
 //   $('.navbar-expand').on('shown.bs.collapse', function() {
@@ -64,14 +64,15 @@ for (var i = 0; i < cities.length; i++) {
 //     [-20.73, 78.81]])
 // });
 
-//window.addEventListener("resize", myFunction);
+window.addEventListener("resize", myFunction);
 
 
-//function myFunction() {
-  //myMap.fitBounds([
-    //[36.64,-141.41],
-   // [-20.73, 78.81]])
-//};
+function myFunction() {
+  d3.event.preventDefault();
+  myMap.fitBounds([
+    [36.64,-141.41],
+   [-20.73, 78.81]])
+};
 
 
 // /*Scroll to top when arrow up clicked BEGIN*/
