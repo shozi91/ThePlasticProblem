@@ -1,94 +1,142 @@
-// Create a map object
-var myMap = L.map("map", {
-  center: [10, -50],
-  zoom: 3
-});
+// from data.js
+var tbody = d3.select("tbody");
 
-L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-  tileSize: 512,
-  maxZoom: 3,
-  zoomOffset: -1,
-  id: "mapbox/light-v10",
-  accessToken: API_KEY
-}).addTo(myMap);
+d3.json("/impactstudies").then(function (data) {
+    console.log(data)
 
-// Define a markerSize function that will give each city a different radius based on its population
-function markerSize(All_sizes_tonnes) {
-  return All_sizes_tonnes *15;
-}
 
-// Each city object contains the city's name, location and population
-
-d3.json("/surface_plastic_mass_by_ocean").then(function (data) {
-  console.log(data)
+    data.forEach(function (info) {
+        console.log(info);
+        var row = tbody.append("tr");
+        Object.entries(info).forEach(function ([key, value]) {
+            console.log(key, value);
+            // Append a cell to the row for each value
+            // in the weather report object
+            var cell = row.append("td");
+            cell.text(value);
+        });
+    });
 });
 
 
-var cities = [
-  {Entity: "Indian Ocean",location: [-20.73, 78.81], All_sizes_tonnes: 59130},
-  {Entity: "Mediterranean Sea",location: [36.22 , 17.82], All_sizes_tonnes: 23150},
-  {Entity: "North Atlantic",location: [36.64,-41.41], All_sizes_tonnes: 56470},
-  {Entity: "North Pacific",location: [38.0, -145.0], All_sizes_tonnes: 96400},
-  {Entity: "South Atlantic",location: [-28.24,-15.57], All_sizes_tonnes: 12780},
-  {Entity: "South Pacific",location: [-23.6, -137.0], All_sizes_tonnes: 21020}];
+// YOUR CODE HERE!
+// Select the form
+var form = d3.select("form");
 
-// Loop through the cities array and create one marker for each city object
-for (var i = 0; i < cities.length; i++) {
-  L.circle(cities[i].location, {
-    fillOpacity: 0.75,
-    color: "transparent",
-    fillColor: "neon",
-    // Setting our circle's radius equal to the output of our markerSize function
-    // This will make our marker's size proportionate to its population
-    radius: markerSize(cities[i].All_sizes_tonnes)
-  }).bindPopup("<h1>" + cities[i].Entity + "</h1> <hr> <h3>Tonnes of Plastic Garbage: " + cities[i].All_sizes_tonnes + "</h3>").addTo(myMap);
+// Select the button
+var button = d3.select("#filter-btn");
+
+// Create event handlers 
+button.on("click", runEnter);
+form.on("submit", runEnter);
+
+// Complete the event handler function for the form
+function runEnter() {
+    d3.json("/impactstudies").then(function (data) {
+        console.log(data)
+
+        //clean the table
+        tbody.html("");
+
+
+        // Prevent the page from refreshing
+        // d3.event.preventDefault();
+
+
+
+        // Select the input element and get the raw HTML node
+        var inputstudy = d3.select("#selectstudy");
+        var inputencounter = d3.select("#selectencounter");
+        var inputanimal = d3.select("#selectanimal");
+        var inputdebris = d3.select("#selectdebris");
+        var inputimpact = d3.select("#selectimpact");
+
+
+
+        // Get the value property of the input element
+        try {
+            var inputValue1 = inputstudy.property("value");
+        }
+        catch (err) {
+            inputValue1 = 0;
+        };
+
+
+        try {
+            var inputValue2 = inputencounter.property("value");
+        }
+        catch (err) {
+            inputValue2 = 0;
+        };
+
+        try {
+            var inputValue3 = inputanimal.property("value");
+        }
+        catch (err) {
+            inputValue3 = 0;
+        };
+
+        try {
+            var inputValue4 = inputdebris.property("value");
+        }
+        catch (err) {
+            inputValue4 = 0;
+        };
+
+        try {
+            var inputValue5 = inputimpact.property("value");
+        }
+        catch (err) {
+            inputValue5 = 0;
+        };
+
+
+
+        console.log(inputValue1);
+        console.log(inputValue2);
+        console.log(inputValue3);
+        console.log(inputValue4);
+        console.log(inputValue5);
+
+
+        var filter = {
+            Study: inputValue1,
+            Encounter_type: inputValue2,
+            Animal: inputValue3,
+            Predominant_debris_type: inputValue4,
+            Impact: inputValue5,
+        };
+
+        Object.keys(filter).forEach(key => {
+            if (filter[key] === 0) delete filter[key];
+        });
+
+        console.log(filter);
+
+
+        var filteredData
+
+        filteredData = data.filter(function (item) {
+            for (var key in filter) {
+                if (item[key] === undefined || item[key] != filter[key])
+                    return false;
+            }
+            return true;
+        });
+        console.log(filteredData);
+
+
+        filteredData.forEach(function (info) {
+            console.log(info);
+            var row = tbody.append("tr");
+            Object.entries(info).forEach(function ([key, value]) {
+                console.log(key, value);
+                // Append a cell to the row for each value
+                // in the weather report object
+                var cell = row.append("td");
+                cell.text(value);
+            });
+
+        });
+    });
 }
-
-
-myMap.fitBounds([
-  [36.64,-141.41],
-  [-20.73, 78.81]])
-
-  
-//   $('.navbar-expand').on('shown.bs.collapse', function() {
-//     myMap.fitBounds([
-//       [36.64,-141.41],
-//       [-20.73, 78.81]])
-//   });
-
-
-// $('.navbar-collapse').on('shown.bs.collapse', function() {
-//   myMap.fitBounds([
-//     [36.64,-141.41],
-//     [-20.73, 78.81]])
-// });
-
-window.addEventListener("resize", myFunction);
-
-
-function myFunction() {
-  myMap.fitBounds([
-    [36.64,-141.41],
-    [-20.73, 78.81]])
-};
-
-
-// /*Scroll to top when arrow up clicked BEGIN*/
-// $(window).scroll(function() {
-//   var height = $(window).scrollTop();
-//   if (height > 100) {
-//       $('#back2Top').fadeIn();
-//   } else {
-//       $('#back2Top').fadeOut();
-//   }
-// });
-// $(document).ready(function() {
-//   $("#back2Top").click(function(event) {
-//       event.preventDefault();
-//       $("html, body").animate({ scrollTop: 0 }, "slow");
-//       return false;
-//   });
-
-// });
-/*Scroll to top when arrow up clicked END*/
