@@ -1,12 +1,12 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, jsonify
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, MetaData
 import pandas as pd
-from flask import Flask, jsonify
 import requests
 from datetime import datetime
+import json
 #################################################
 # Database Setup
 #################################################
@@ -83,14 +83,14 @@ def t1():
     data["DateOriginal"] = pd.to_datetime(data["DateOriginal"])
     table1 = data.loc[data['DateOriginal']> datetime_object].to_json(orient='records')
     connection.close()
-    return table1
+    return jsonify(json.loads(table1)) 
 
 @app.route("/global_plastic_production")
 def t2():
     connection = engine.connect()
     table2 = pd.read_sql(sql=f"Select * FROM {x[1]}", con=connection).to_json(orient='records')    
     connection.close()
-    return table2
+    return jsonify(json.loads(table2)) 
 
 
 @app.route("/impactstudies")
@@ -98,21 +98,21 @@ def t3():
     connection = engine.connect()
     table3 = pd.read_sql(sql=f"Select * FROM {x[2]}", con=connection).to_json(orient='records')
     connection.close()
-    return table3
+    return jsonify(json.loads(table3)) 
 
 @app.route("/plastic_fate")
 def t4():
     connection = engine.connect()
     table4 = pd.read_sql(sql=f"Select * FROM {x[3]}", con=connection).to_json(orient='records')
     connection.close()
-    return table4
+    return jsonify(json.loads(table4)) 
 
 @app.route("/plastic_waste_by_sector")
 def t5():
     connection = engine.connect()
     table5 = pd.read_sql(sql=f"Select * FROM {x[4]}", con=connection).to_json(orient='records')
     connection.close()
-    return table5
+    return jsonify(json.loads(table5)) 
 
 @app.route("/plastic_waste_generation_total")
 def t6():
@@ -144,7 +144,7 @@ def t7():
     connection = engine.connect()
     table7 = pd.read_sql(sql=f"Select * FROM {x[6]}", con=connection).to_json(orient='records')
     connection.close()
-    return  table7 
+    return  jsonify(json.loads(table7)) 
 
 
 @app.route("/surface_plastic_mass_by_ocean")
@@ -152,7 +152,7 @@ def t8():
     connection = engine.connect()
     table8 = pd.read_sql(sql=f"Select * FROM {x[7]}", con=connection).to_json(orient='records')
     connection.close()
-    return table8
+    return jsonify(json.loads(table8)) 
 
 if __name__ == "__main__":
     app.run(debug=True)
