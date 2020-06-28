@@ -17,7 +17,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
-
+    <link rel="stylesheet" href="static/css/creators.css">
 </head>
 
 <body>
@@ -40,14 +40,16 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Data</a>
                     <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('data')}}">Overview</a>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/global_plastic_production">Global Plastic Production</a>
                         <a class="dropdown-item" href="/plastic_waste_by_sector">Plastic Waste by Sector</a>
                         <a class="dropdown-item" href="/plastic_fate">Plastic Garbage Fate</a>
                         <a class="dropdown-item" href="/plastic_waste_generation_total">Plastic Waste by Country</a>
                         <a class="dropdown-item" href="/impactstudies">Imapct Studies Data</a>
                         <a class="dropdown-item" href="/surface_plastic_mass_by_ocean">Surface Ocean Plastic </a>
-                        <a class="dropdown-item" href="/summary_earth">Global CleanUp Event Data</a>
-                        <a class="dropdown-item" href="/cleanup">Global CleanUp Summary Data</a>
+                        <a class="dropdown-item" href="/summary_earth">Global Cleanup Event Data</a>
+                        <a class="dropdown-item" href="/cleanup">Global Cleanup Summary Data</a>
                     </div>
                 </li>
                 <li class="nav-item"><a href="{{ url_for('creators')}}" class="nav-link">Creators</a></li>

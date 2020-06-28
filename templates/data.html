@@ -1,40 +1,201 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Plastic Problems
-        </title>
-        <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
-    </head>
 
-    <body>
-        
-        <script src="js/home.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Plastic Problems
+    </title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a href="#" class="navbar-brand">
-                <img src="../img/logo.png" height="28" alt="The Plastic Problem">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">>
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <div class="navbar-nav mr-auto">
-                    <a href="#" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">Source</a>
-                    <a href="#" class="nav-item nav-link">Effect</a>
-                    <a href="#" class="nav-item nav-link">Resolution</a>
-                    <a href="#" class="nav-item nav-link">Pictures</a>
-                </div>
-                <div class="navbar-nav ml-auto">
-                    <a href="#" class="nav-item nav-link">Data</a>
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" id="navigationBar">
+        <a href="{{ url_for('index')}}" class="navbar-brand">
+            <img src="static/img/logo.png" height="65" alt="The Plastic Problem">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a href="{{ url_for('source')}}" class="nav-link">Source</a></li>
+                <li class="nav-item"><a href="{{ url_for('river')}}" class="nav-link">Path</a></li>
+                <li class="nav-item"><a href="{{ url_for('gal')}}" class="nav-link">Effect</a></li>
+                <li class="nav-item"><a href="{{url_for('resolution')}}" class="nav-link">Resolution</a></li>
+                <li class="nav-item"><a href="{{ url_for('gal2')}}" class="nav-link">Pictures</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Data</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('data')}}">Overview</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/global_plastic_production">Global Plastic Production</a>
+                        <a class="dropdown-item" href="/plastic_waste_by_sector">Plastic Waste by Sector</a>
+                        <a class="dropdown-item" href="/plastic_fate">Plastic Garbage Fate</a>
+                        <a class="dropdown-item" href="/plastic_waste_generation_total">Plastic Waste by Country</a>
+                        <a class="dropdown-item" href="/impactstudies">Imapct Studies Data</a>
+                        <a class="dropdown-item" href="/surface_plastic_mass_by_ocean">Surface Ocean Plastic </a>
+                        <a class="dropdown-item" href="/summary_earth">Global Cleanup Event Data</a>
+                        <a class="dropdown-item" href="/cleanup">Global Cleanup Summary Data</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid m-5 p-5" ;>
+
+        <h1 style="text-align:center;" class="display-3">Overview</h1>
+        <br><br>
+        <i class="fi-social-linkedin"></i>
+
+        <p class="lead" style="text-align:center;">
+            A project of this magnitude requires data from multiple sources. We will go over the sources
+            that were utilized to build this page, as well as the transformations applied to digest the information
+            in a visual manner.
+            <br><br>
+            The data used in our visualizations can be found under the Data used buttons in each category. The link to
+            the source of the data can be found using the source buttons under their respective category.
+        </p>
+
+        <hr class="my-2">
+
+        <div class="container px-5 pt-4">
+            <div class="row" style="font-size:18px">
+                <div class="col-md-12 col-12">
+
+                    <h2 style="text-align:center;">Global Plastic Production</h2>
+                    <hr class="hr-subtitle">
+                    <p class="lead">
+                        Sourced from the Plastic Pollution article by Hannah Ritchie which is hosted on
+                        ourworldindata.org we used this
+                        data in conjunction with the Extrapolated change in plastic fate to 2050 data which is also
+                        found on ourworldindata.org.
+                    </p>
+                    <button type="button" class="btn btn-primary"
+                        onclick="window.open('/global_plastic_production','_blank');">Global Plastic Production Data</button>
+                    <button type="button" class="btn btn-info"
+                        onclick="window.open('https://ourworldindata.org/plastic-pollution#all-charts-preview','_blank');">Our
+                        World in Data</button>
+                    
+                    <h2 style="text-align:center;">Plastic Waste by Country</h2>
+                    <hr class="hr-subtitle">
+                    <p class = "lead">
+                        Similar to the Global Plastic Production data, the Plastic waste by country was taken from ourworldindata.org. The contents of the file were then injected into a GEOJSON file. 
+                        This file was then used to create a cloropleth map on the Source page.
+    
+                    </p>
+                    <button type="button" class="btn btn-primary"
+                    onclick="window.open('/plastic_waste_generation_total','_blank');">GEOJSON with injected Data</button>
+                    <button type="button" class="btn btn-primary"
+                    onclick="window.open('http://enjalot.github.io/wwsd/data/world/world-110m.geojson','_blank');">Original GEOJSON</button>
+                    <button type="button" class="btn btn-info"
+                        onclick="window.open('https://ourworldindata.org/plastic-pollution#all-charts-preview','_blank');">Our
+                        World in Data</button>
+                        
+                    <h2 style="text-align:center;">Plastic Waste by Sector</h2>
+                    <hr class="hr-subtitle">
+                    <p class = "lead">
+                        Similar to the Global Plastic Production data, the Plastic waste by Sector was taken from ourworldindata.org and converted into a json. 
+                        The json file was then used to create the Plastic Waste by Sector donut chart.
+
+                    </p>
+                    <button type="button" class="btn btn-primary"
+                        onclick="window.open('/plastic_waste_by_sector','_blank');">Plastic Waste by Sector Data</button>
+                    <button type="button" class="btn btn-info"
+                        onclick="window.open('https://ourworldindata.org/plastic-pollution#all-charts-preview','_blank');">Our
+                        World in Data</button>
+
+                    <h2 style="text-align:center;">Plastic Garbage Fate</h2>
+                    <hr class="hr-subtitle">
+                    <p class = "lead">
+                        As mentioned above, this data was combined with the Global Plastic Production data to create The Fate of Plastics Produced since 1950 figure on the source page.
+                    </p>
+                    <p class="lead">
+                        The combined data set can be found in the Data Used button below.
+                    </p>
+                    <button type="button" class="btn btn-primary" onclick="window.open('/plastic_fate','_blank');">Plastic Garbage Fate Data</button>
+                    <button type="button" class="btn btn-info"
+                        onclick="window.open('https://ourworldindata.org/plastic-pollution#all-charts-preview','_blank');">Our
+                        World in Data</button>
+                    
+                    
+                        <h2 style="text-align:center;">Impact Studies Data</h2>
+                    <hr class="hr-subtitle">
+                        <p class = "lead"> At this point we have a bit of a theme going and to further add to this, the Impact Studies were also scraped from ourworldindata (they're a really amazing resource that we highly recommend checking out!). 
+                            This data was pretty self-explanatory so we didn't do any further transformation to it.
+                        </p>
+                        <p class="lead">
+                            The same chart was then created with the additional ability to filter on the Effect page.
+                        </p>
+                    <button type="button" class="btn btn-primary"
+                        onclick="window.location.href='/impactstudies';">Impcat Studies Data</button>
+                    <button type="button" class="btn btn-info"
+                        onclick="window.open('https://ourworldindata.org/ecological-impacts-of-marine-plastic-debris','_blank');">Our
+                        World in Data</button>
+                    
+                    
+                    <h2 style="text-align:center;">Surface Ocean Plastic</h2>
+                    <hr class="hr-subtitle">
+                    <p class = "lead">
+                        Similar to the some of the visualization sources above, this data was pulled from the Plastic Pollution article on ourworldindata. 
+                        Specifically the Surface Plastic Mass by Ocean Basin chart. the only modification that was made to this was, the global total was removed.
+                    </p>
+                    <p class = "lead">
+                        The data was then converted to a JSON file where it was then used to create a leaflet map on the Effect page.
+                    </p>
+                    <button type="button" class="btn btn-primary" onclick="window.open('/surface_plastic_mass_by_ocean','_blank');">Ocean Plastic Data</button>
+                        <button type="button" class="btn btn-info"
+                        onclick="window.open('https://ourworldindata.org/ecological-impacts-of-marine-plastic-debris','_blank');">Our
+                        World in Data</button>
+                    
+                    
+                    <h2 style="text-align:center;">Global Cleanup Event Data</h2>
+                    <hr class="hr-subtitle">
+                    <p class = "lead">
+                        This data was pulled from the amazing website coastalcleanupdata.org. Check them out if you have time, they're doing some amazing work and their website has a fantastic interactive map for visualizing cleanup data.
+                    </p>
+                    <p class="lead">
+                        We broke the data up into two pieces, the first was to split up and summarize the data based on each category. This data was then used to create a d3-funnel chart to visualize all of the different items collected.
+                    </p>
+
+                    <p class = "lead">
+                        The second piece of the data was to re-summarize the data based on GPS coordinates. This, along with leaflet and mapbox, were used to create an interactive map to visualize the cleanups that occured in 2019. Again, we highly encourage you to go checkout cleanupdata.org, they're doing some awesome stuff to help everyone around the globe.
+                    </p>
+
+                    <p class = "lead">
+                        The visualizations can be found on the Resolutions page. 
+                    </p>
+
+                    <p>
+                        *NOTE* The cleanup Map data is quite large as it has records predating 2019. This means it will take some time to load.
+                    </p>
+
+                    
+                    <button type="button" class="btn btn-primary"
+                        onclick="window.location.href='/summary_earth';">Funnel Data</button>
+                        <button type="button" class="btn btn-primary"
+                        onclick="window.location.href='/cleanup';">Cleanup Map</button>
+                        <button type="button" class="btn btn-info"
+                        onclick="window.open('https://www.coastalcleanupdata.org/','_blank');">Coastal Cleanup Data</button>
+
                 </div>
             </div>
-        </nav>
+        </div>
+    </div>
+</body>
 
-        
-
-    </body>
 </html>
