@@ -1,17 +1,22 @@
-from flask import Flask, render_template, redirect
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func, MetaData
+import os
+from flask import Flask, jsonify, render_template
+from sqlalchemy import create_engine
 import pandas as pd
-from flask import Flask, jsonify
 import requests
 from datetime import datetime
 #################################################
 # Database Setup
 #################################################
-engine = create_engine(
-    f'postgresql://postgres:postgres@database-2.cwsizsgvjvsz.us-east-2.rds.amazonaws.com:5432/plastic')
+database_url = os.getenv(
+    "DATABASE_URL",
+    "postgresql://postgres:postgres@database-2.cwsizsgvjvsz.us-east-2.rds.amazonaws.com:5432/plastic",
+)
+
+# Some providers still return postgres:// which SQLAlchemy does not accept.
+if database_url.startswith("postgres://"):
+    database_url = database_url.replace("postgres://", "postgresql://", 1)
+
+engine = create_engine(database_url)
 # # reflect an existing database into a new model
 #Base = automap_base()
 
@@ -120,7 +125,11 @@ def t6():
     country_df = pd.read_sql_query(sql=f"Select * FROM {x[5]}", con=connection)
     connection.close()
 
-    response = requests.get("http://enjalot.github.io/wwsd/data/world/world-110m.geojson")
+    response = requests.get(
+        "https://enjalot.github.io/wwsd/data/world/world-110m.geojson",
+        timeout=15,
+    )
+    response.raise_for_status()
 
     geoData = response.json()
 
