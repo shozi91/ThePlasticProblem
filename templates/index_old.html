@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plastic Problems
+    </title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" id="navigationBar">
+        <a href="{{ url_for('index')}}" class="navbar-brand">
+            <img src="static/img/logo.png" height="65" alt="The Plastic Problem">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a href="{{ url_for('source')}}" class="nav-link">Source</a></li>
+                <li class="nav-item"><a href="{{ url_for('river')}}" class="nav-link">Path</a></li>
+                <li class="nav-item"><a href="{{ url_for('gal')}}" class="nav-link">Effect</a></li>
+                <li class="nav-item"><a href="{{url_for('resolution')}}" class="nav-link">Resolution</a></li>
+                <li class="nav-item"><a href="{{ url_for('gal2')}}" class="nav-link">Pictures</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Data</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/global_plastic_production">Global Plastic Production</a>
+                        <a class="dropdown-item" href="/plastic_waste_by_sector">Plastic Waste by Sector</a>
+                        <a class="dropdown-item" href="/plastic_fate">Plastic Garbage Fate</a>
+                        <a class="dropdown-item" href="/plastic_waste_generation_total">Plastic Waste by Country</a>
+                        <a class="dropdown-item" href="/impactstudies">Imapct Studies Data</a>
+                        <a class="dropdown-item" href="/surface_plastic_mass_by_ocean">Surface Ocean Plastic </a>
+                        <a class="dropdown-item" href="/summary_earth">Global CleanUp Event Data</a>
+                        <a class="dropdown-item" href="/cleanup">Global CleanUp Summary Data</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid m-5 p-5";>
+
+        <h1 style="text-align:center;" class="display-3">The Plastic Problem </h1>
+        <br><br>
+
+
+    
+    <p class="lead" style="text-align:left;">
+        Humanity has a problem. Pollution. We're addicted to it. 
+        One of the largest contributors to this addiction is our love of plastics and the convenience it presents to us in our daily lives. 
+        Plastics are used in construction and medical equipment. One might say this would be the 'good' which plastics can bring.
+        Plastics are also used to neatly package items we consume each and every day. 
+        We even use plastics to carry around these neatly packaged items.
+        Plastics provide much of humanity a sense of entitlement, as it becomes more ingrained in our lives. Plastics have made us lazy.
+        <br><br>
+        What happens when we become lazy? What happens to the plastic after we finish that sandwich? That bottle of water? That straw we use?
+        It ends up in our creeks, streams, rivers, and oceans. 
+    </b>
+    </p>
+
+
+
+    <hr class="my-2">
+
+    <div class="container px-5 pt-4">
+    <div class="row" style="font-size:18px">
+        
+
+        <div class="col-md-12 col-12">
+            
+            <h2 style="text-align:center;">Source</h2><hr class = "hr-subtitle">
+
+
+            <a href="#"><img class = "img-shadow" src="static/img/source.png" width="45%" height="auto" ALIGN='left'
+                    style="margin-right:20px;"></a><p class="lead">
+                        You might be saying to me, "hold on just a second, seemingly judgemental individual berating me about my use of plastics. What does any of this have to do with me? I recycle!"
+                        
+                        You're right to push back, but at the same time, regardless of the stout contribution you've made to our communities and world by recycling and playing your role. 
+                        There is still much of the world who may not know of this baffling situation humankind has put itself and Earth in. 
+                        
+                        No matter how detrimental the situation may seem, we as a collective species continues to produce, consume, and waste plastics like there's no tomorrow.
+
+                        The plastic problem has been growing exponentially for decades. 
+                        <br><br>
+                        
+                        Back in the 1960s, we produced less than 25,000,000 tons of plastic each year.
+
+                        Within the next 20 years, production reached 50,000,000 million tons of plastic each year. 
+
+                        By the 1990s, we allowed the production of plastic to double again, reaching 100,000,000 tons. Let's just stop here for just a moment, and think about what this number means.
+                        <br><br>
+
+                        The majestic Empire State built has a weight of 350,000 tons. With the amount of plastic made in 1990, we could have built the Empire State building 285 times!
+                        <br><br>
+                        Zip forward another 20 years to 2010, where 300,000,000 tons of plastic is made each year.
+                        
+                        Nearly half of this plastic is made for single-use items, like Twinkie wrappers, straws, and water bottles.
+
+                        Essentially the items you and I could think of that we could identify as trash. 
+                        
+                        
+
+
+                        
+                        
+                        The plastics problem has been
+            growing exponentially for decades. In 1967, less than 25 million tons were produced each year. Yet by 1980,
+            production had doubled. Ten years later, it doubled again to 100 million tons, surpassing the amount of
+            steel produced globally. Today, the plastics industry, estimated to be worth more than $4 trillion,
+            generates more than 300 million tons of plastic a year according to the most recent records —
+            nearly half of which is for single-use items, meaning that it will almost instantly become trash.
+
+
+            <p class="lead"><br>Our analysis will show which countries and industries are responsible for world's plastic production.
+                We will also show how the three key options for handling plastic waste: recycling, incineration or
+                disposal are faring over the years. <br>
+            <p class="lead">Please click on the image to learn more.
+                </img>
+                <br>
+        </div>
+    </div><br><br>
+
+    <div class="row" style="font-size:18px">
+        <div class="col-md-12 col-12">
+            <h2 style="text-align:center;">Impacts</h2><hr class = "hr-subtitle">
+            <a href='#'><img class = "img-shadow" src="static/img/Great-Pacific-Garbage-Patch.png" width="45%" height="auto" ALIGN='right'
+                    style="margin-left:20px;"></a><p class="lead"> Plastic enters the oceans from
+            coastlines, rivers, tides, and marine sources. But once it is there, where does it go?
+
+            The distribution and accumulation of ocean plastics is strongly influenced by oceanic surface currents and
+            wind patterns. Plastics are typically buoyant – meaning they float on the ocean surface –, allowing them to
+            be transported by the prevalent wind and surface current routes. As a result, plastics tend to accumulate in
+            oceanic gyres, with high concentrations of plastics at the centre of ocean basins, and much less around the
+            perimeters.
+            After entry to oceans from coastal regions, plastics tend to migrate towards the centre of ocean basins.
+            <p class= "lead"><br>Our analysis visually shows the garbage patches around the world and shows in tabular form the
+                specifically the type of injuries various animal species have been observed sustaining.</p>
+            <p class= "lead">Please click on the image to learn more.
+                </img>
+        </div>
+    </div>
+    <p>
+        <h2 style="text-align:center;">Clean-Up</h2><hr class = "hr-subtitle">
+    <div class="row">
+        <div class="col-md-12 col-12">
+
+
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <div style="font-size: 18px;text-align: center;"> <p class= "lead">There are cleanup efforts underway to solve the plastic
+                issue that exists. We have provided a graph that shows
+                how much of each type plastic waste and other waste is being collected and also a world map that shows
+                where it is being collected.
+                <P class='lead'><br> Please click <a href='#'>here</a> to learn more</div>
+
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img class = "img-shadow" src="static/img/Cleanup1.jpg" style="width:50%">
+
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img class = "img-shadow" src="static/img/Cleanup2.jpg" style="width:50%">
+
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img class = "img-shadow" src="static/img/Cleanup4.jpg" style="width:50%">
+
+                </div>
+
+
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+</div>
+        </div>
+
+
+
+
+        <script src="http://d3js.org/d3.v5.min.js"></script>
+        <script src="d3.min.js?v=3.2.8"></script>
+
+        
+
+
+
+
+
+
+
+
+    </div>
+
+    <script type="text/javascript" charset="utf-8"></script>
+    <script src="static/js/imageSlideshow.js"></script>
+
+</div>
+</div>
+
+</body>
+
