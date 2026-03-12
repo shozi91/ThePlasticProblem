@@ -1,7 +1,10 @@
 import copy
+import json
 import os
+import re
 from datetime import datetime
 from functools import lru_cache
+from pathlib import Path
 
 import pandas as pd
 import requests
@@ -19,6 +22,10 @@ WORLD_GEOJSON_URL = os.getenv(
     "WORLD_GEOJSON_URL",
     "https://enjalot.github.io/wwsd/data/world/world-110m.geojson",
 )
+WORLD_GEOJSON_FILE = Path(
+    os.getenv("WORLD_GEOJSON_FILE", "static/choropleth/myfile.geojson")
+)
+PREFER_LOCAL_DATA = os.getenv("PREFER_LOCAL_DATA", "0").lower() in {"1", "true", "yes"}
 
 # Some providers still return postgres:// which SQLAlchemy does not accept.
 if DATABASE_URL.startswith("postgres://"):
@@ -46,6 +53,16 @@ LEGACY_TABLE_INDEX = {
     "plastic_waste_generation_total": 5,
     "summary_earth": 6,
     "surface_plastic_mass_by_ocean": 7,
+}
+LOCAL_DATA_FILES = {
+    "cleanup": Path("data/mws/cleanup.csv"),
+    "global_plastic_production": Path("data/global_plastics_production.csv"),
+    "impactstudies": Path("data/impactstudies.csv"),
+    "plastic_fate": Path("data/plastic_fate.csv"),
+    "plastic_waste_by_sector": Path("data/plastic_waste_by_sector.csv"),
+    "plastic_waste_generation_total": Path("data/plastic_waste_generation_total.csv"),
+    "summary_earth": Path("data/summary_earth.csv"),
+    "surface_plastic_mass_by_ocean": Path("data/surface_plastic_mass_by_ocean.csv"),
 }
 
 #################################################
@@ -75,13 +92,36 @@ def resolve_table_name(dataset_key):
 
 
 def read_table(dataset_key):
-    table_name = resolve_table_name(dataset_key)
-    if not table_name.replace("_", "").isalnum():
-        raise ValueError(f"Unexpected table name: {table_name}")
+    if PREFER_LOCAL_DATA:
+        return read_local_table(dataset_key)
 
-    query = text(f'SELECT * FROM "{table_name}"')
-    with engine.connect() as connection:
-        return pd.read_sql_query(query, con=connection)
+    try:
+        table_name = resolve_table_name(dataset_key)
+        if not table_name.replace("_", "").isalnum():
+            raise ValueError(f"Unexpected table name: {table_name}")
+
+        query = text(f'SELECT * FROM "{table_name}"')
+        with engine.connect() as connection:
+            return pd.read_sql_query(query, con=connection)
+    except Exception:
+        # Keep development unblocked if the original RDS database is unavailable.
+        return read_local_table(dataset_key)
+
+
+def normalize_columns(dataframe):
+    dataframe.columns = [
+        re.sub(r"[^0-9A-Za-z_]+", "_", col).strip("_") for col in dataframe.columns
+    ]
+    return dataframe
+
+
+def read_local_table(dataset_key):
+    local_file = LOCAL_DATA_FILES.get(dataset_key)
+    if not local_file or not local_file.exists():
+        raise FileNotFoundError(f"No local fallback file for dataset '{dataset_key}'")
+
+    data = pd.read_csv(local_file)
+    return normalize_columns(data)
 
 
 def dataframe_records_response(dataframe):
@@ -90,9 +130,15 @@ def dataframe_records_response(dataframe):
 
 @lru_cache(maxsize=1)
 def world_geojson():
-    response = requests.get(WORLD_GEOJSON_URL, timeout=15)
-    response.raise_for_status()
-    return response.json()
+    try:
+        response = requests.get(WORLD_GEOJSON_URL, timeout=15)
+        response.raise_for_status()
+        return response.json()
+    except Exception:
+        if WORLD_GEOJSON_FILE.exists():
+            with WORLD_GEOJSON_FILE.open("r", encoding="utf-8") as file:
+                return json.load(file)
+        raise
 
 
 @app.route("/")
